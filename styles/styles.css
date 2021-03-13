@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+	outline: 0;
+    max-width: 1200px;
+    font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+}
+
+body h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 64px;
+    font-weight: 400px;
+    font-style: normal;
+    color: rgba(6, 10, 36, 1);
+    letter-spacing: 0;
+}
