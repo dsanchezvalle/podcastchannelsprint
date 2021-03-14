@@ -13,6 +13,35 @@
 	font-size: 100%;
 }
 
+nav#navbar-container{
+display: flex;
+flex-flow: column nowrap;
+}
+
+nav .navbar-top{
+
+}
+
+nav ul{ 
+    display: none;
+}
+
+nav input#collapsible-check{
+    display: none;
+}
+
+nav input#collapsible-check:checked ~ ul{
+  display:block;
+}
+
+nav ul li{
+    display: block;
+    background: lightgrey;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid grey;
+}
+
 body h1{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 64px;
