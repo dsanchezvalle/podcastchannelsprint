@@ -15,7 +15,7 @@
 
 main#main-container{
     width: 100%;
-    background-color: lightcyan;
+    
 } /* WARNING: min-width? */
 
 nav#navbar-container{
@@ -23,12 +23,12 @@ nav#navbar-container{
     display: flex;
     height: 44px;
     width: 100%;
-    border: 1px solid black;
+    
     align-items: center;
     justify-content: space-between;
 }
 
-nav img{
+nav img#logo{
     margin-left: 16px;
     height: 24px;
     width: 24px;
@@ -111,3 +111,68 @@ body h1{
     color: rgba(6, 10, 36, 1);
     letter-spacing: 0;
 }
+
+
+@media screen and (min-width: 480px) {
+    
+    nav#navbar-container{
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav label{
+     visibility: hidden;
+    }
+
+    nav img#logo{
+        margin-left: 16px;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+    }
+    
+    nav#navbar-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative; 
+    }    
+
+    nav ul{ 
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        margin-right: 100px;
+    }   
+        
+    nav ul li{
+
+        background: rgba(255,255,255,1);
+        padding: 26px 0px;
+        margin-left:48px;
+        font-size: 16px;
+        color: #060A24;
+        letter-spacing: 0;
+        line-height: 28px;
+        height: 80px;
+        cursor: pointer;       
+    }
+
+    nav ul li:hover{
+        color: rgba(0, 243, 187, 1); 
+        text-decoration: line-through;      
+    }
+
+    nav ul li:active{
+        color: rgb(6, 10, 36, 0.56); 
+        text-decoration: line-through;      
+    }
+
+    
+    
+
+}
+
+
