@@ -15,6 +15,7 @@
 
 main#main-container{
     width: 100%;    
+    
 } /* WARNING: min-width? */
 
 nav#navbar-container{
@@ -100,7 +101,7 @@ nav ul li{
 section#welcome{
     display: flex;
     flex-flow: column nowrap;
-    padding: 1.82rem 1rem 0 1rem;
+    padding: 1.82rem 1rem 1.5rem 1rem;
 }
 
 section#welcome h1{
@@ -168,8 +169,35 @@ button.green-btn:hover{
 button.green-btn:active {
     position: relative;
     top: 1px;
-  }      
+}
 
+/* Second section - Episodes */
+
+section#episodes{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 4rem 0.69rem 9rem 0.69rem;
+    background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
+}
+
+section#episodes.cover-mask{
+    clip-path: polygon(0 2.7%, 100% 0, 100% 97.3%, 0 100%);
+}
+
+section#episodes > h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding-bottom: 1.31rem;
+    font-size: 2.25rem;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0;
+    line-height: 2.625rem;
+}
+
+section#episodes div.players-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 11px;
+}
 
 @media screen and (min-width: 480px) {
     
@@ -270,6 +298,32 @@ button.green-btn:active {
         height: 48px;
         width: 226px;
     }
+
+    /* Second Section - Episodes */
+
+    section#episodes{
+        padding: 11.625rem 6.25rem 14.54rem 6.25rem;
+    }
+    
+    section#episodes.cover-mask{
+        clip-path: polygon(0 14.4%, 100% 0, 100% 85.6%, 0 100%);
+    }
+
+    section#episodes > h1{             
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 1);
+        letter-spacing: 0;
+        line-height: 3.875rem;
+        padding-left: 6.25rem;
+        padding-bottom: 1.625rem;
+    }
+
+    section#episodes div.players-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 72px;
+    }
+    
 }
 
 
