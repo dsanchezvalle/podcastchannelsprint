@@ -264,6 +264,54 @@ section#guests div.guests-grid img{
     height: 243px;
 }
 
+/* Fifth section - Topics */
+
+section#topics{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 3rem 1rem 0 1rem;
+}
+
+section#topics h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2.25rem;
+    color: rgba(6, 10, 36, 1);
+    letter-spacing: 0;
+    line-height: 2.625rem;
+}
+
+section#topics div.cards-container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    padding-top: 2.31rem;
+}
+
+section#topics div.cards-container div.card{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+section#topics div.cards-container div.card img{
+    width: 104px;
+    height: 104px;
+}
+
+section#topics div.cards-container div.card p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgba(6, 10, 36, 1);
+    letter-spacing: 0;
+    line-height: 2rem;
+    padding: 0.812rem 0 4.06rem 0;
+    text-align: center;
+    max-width: 13.75rem;
+}
+
 @media screen and (min-width: 480px) {
     
     nav#navbar-container{
@@ -450,6 +498,33 @@ section#guests div.guests-grid img{
     section#guests div.guests-grid img{
         height: 25.28vw;
         width: 100%;
+    }
+
+    /* Fifth section - Topics */
+
+    section#topics{
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 4rem 13.89vw 0 13.89vw;
+    }
+
+    section#topics h1{
+        font-size: 3rem;
+        line-height: 3.875rem;
+    }
+
+    section#topics div.cards-container{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: baseline;
+        width: 100%;
+        padding: 4.312rem 0rem 0 1rem;
+        margin-right: -1rem;
+    }
+
+    section#topics div.cards-container div.card p{
+        padding: 1.81rem 0 0 0;
     }
 
 
