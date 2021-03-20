@@ -236,6 +236,34 @@ section#about-us p{
     line-height: 1.375rem;
 }
 
+/* Fourth section - Guests */
+
+section#guests{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section#guests h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2.25rem;
+    color: rgb(6, 10, 36, 1);
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    padding: 3.375rem 1rem 0 1rem;
+}
+
+section#guests div.guests-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    padding-top: 0.875rem; 
+}
+
+section#guests div.guests-grid img{
+    height: 243px;
+}
+
 @media screen and (min-width: 480px) {
     
     nav#navbar-container{
@@ -397,6 +425,31 @@ section#about-us p{
         line-height: 1.5rem;
         padding-right: 0;
         padding-left: 0;
+    }
+
+    /* Fourth section - Guests */
+
+    section#guests{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    section#guests h1{
+        font-size: 3rem;
+        line-height: 3.875rem;
+        padding: 4rem 0rem 0 12.5rem;       
+        
+    }
+
+    section#guests div.guests-grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding-top: 2.25rem; 
+    }
+
+    section#guests div.guests-grid img{
+        height: 25.28vw;
+        width: 100%;
     }
 
 
