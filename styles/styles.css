@@ -18,6 +18,8 @@ main#main-container{
     
 } /* WARNING: min-width? */
 
+/* Navbar */
+
 nav#navbar-container{
     position: relative;
     display: flex;
@@ -163,7 +165,7 @@ button.green-btn:hover{
     color: rgba(255, 255, 255, 1);
     letter-spacing: 0;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: 1.375rem;
 }
 
 button.green-btn:active {
@@ -312,6 +314,34 @@ section#topics div.cards-container div.card p{
     max-width: 13.75rem;
 }
 
+/* Sixth section - News */
+
+section#news{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 4rem 1rem 0rem 1rem;
+    background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
+}
+
+section#news.cover-mask2{
+    clip-path: polygon(0 10.51%, 100% 0, 100% 100%, 0 100%);
+}
+
+section#news > h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding-bottom: 2.25rem;
+    font-size: 2.25rem;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    text-align: center;
+}
+
+section#news button.green-btn{
+    margin-bottom: 4.19rem;
+}
+
+
 @media screen and (min-width: 480px) {
     
     nav#navbar-container{
@@ -408,7 +438,7 @@ section#topics div.cards-container div.card p{
         font-size: 18px;
         color: rgb(6, 10, 36, 1);
         line-height: 24px;
-        height: 48px;
+        height: 56px;
         width: 226px;
     }
 
@@ -505,7 +535,7 @@ section#topics div.cards-container div.card p{
     section#topics{
         display: flex;
         flex-flow: column nowrap;
-        padding: 4rem 13.89vw 0 13.89vw;
+        padding: 4rem 13.89vw 2.12rem 13.89vw;
     }
 
     section#topics h1{
@@ -519,7 +549,7 @@ section#topics div.cards-container div.card p{
         justify-content: space-around;
         align-items: baseline;
         width: 100%;
-        padding: 4.312rem 0rem 0 1rem;
+        padding: 4.312rem 0 0 1rem;
         margin-right: -1rem;
     }
 
@@ -527,6 +557,27 @@ section#topics div.cards-container div.card p{
         padding: 1.81rem 0 0 0;
     }
 
+    /* Sixth section - News */
+
+    section#news{
+        padding: 13.31rem 0rem 9.44rem 0rem;
+        align-items: center;
+    }
+
+    section#news h1{
+        font-size: 3rem;
+        text-align: center;
+        line-height: 3.875rem;
+    }
+    
+    section#news.cover-mask2{
+        clip-path: polygon(0 29.1%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    section#news button.green-btn{
+        width: 21.56rem;
+        margin-bottom: 0;
+    }
 
 }
 
