@@ -11,7 +11,7 @@
 <body>
     <main id="main-container">
         <header>
-            <nav id="navbar-container">
+            <nav id="navbar-container" role="navigation" aria-label="Main">
                 <img id="logo" src="images/logo.svg" alt="Logo Podcast Channel">
                 <input type="checkbox" id="collapsible-check">
                 <label id="collapsible-icon" for="collapsible-check">
@@ -22,10 +22,10 @@
                     </div>
                 </label>            
                 <ul>
-                    <li>EPISODIOS</li>
-                    <li>NOSOTROS</li>
-                    <li>ENTREVISTAS</li>
-                    <li>TÓPICOS</li>
+                    <li><a href="#episodes">EPISODIOS</a></li>
+                    <li><a href="#about-us">NOSOTROS</a></li>
+                    <li><a href="#guests">ENTREVISTAS</a></li>
+                    <li><a href="#topics">TÓPICOS</a></li>
                 </ul>
             </nav> 
         </header>
@@ -36,7 +36,7 @@
                 <span class="screen-text">El portal de podcasts que explora el mundo de la programación y la tecnología.</span>
                 Nuevos episodios, todos los jueves cada 15 días.
             </p>
-            <button class="green-btn">CONOCÉ MÁS</button>
+            <a href="#about-us" class="green-btn">CONOCÉ MÁS</a>
         </section>
         <section id="episodes" class="cover-mask">
             <h1>Episodios</h1>
@@ -89,16 +89,31 @@
         </section>
         <section id="news" class="cover-mask2">
             <h1>¿Querés las últimas novedades?</h1>
-            <button class="green-btn">ESCUCHÁ LOS EPISODIOS</button>
+            <a href="#episodes" class="green-btn">ESCUCHÁ LOS EPISODIOS</a>
         </section>
         <footer id="footer-container">
             <p>© 2019— Hello blue pale dot</p>
             <div id="icons-container">
-                <i class="fab fa-spotify"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-telegram"></i>
+                <a href="https://open.spotify.com/playlist/5vyyG2HOyNJhVweyHOS3qS?si=7eb7c50eddb948ba">
+                    <i class="fab fa-spotify" aria-hidden="true"></i>
+                    <span class="visually-hidden">Spotify</span>
+                </a>
+                <a href="https://www.instagram.com/bluedotpodcastchannel2/">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+                <a href="https://twitter.com/bluedotpodcast3">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="visually-hidden">Twitter</span>
+                </a>
+                <a href="https://www.facebook.com/Blue-Dot-105798288267972">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <span class="visually-hidden">Facebook</span>
+                </a>
+                <a href="https://t.me/bluedotpodcast">
+                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                    <span class="visually-hidden">Telegram</span>
+                </a>
             </div>
         </footer>
     </main>
