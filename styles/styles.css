@@ -12,14 +12,12 @@
 	font-size: 16px;
     text-decoration: none;
 }
-/*max-width: 1200px;*/
 
 main#main-container{
     width: 100%;        
-} /* WARNING: min-width? */
+}
 
 /* Navbar */
-
 nav#navbar-container{
     position: relative;
     display: flex;
@@ -174,7 +172,7 @@ a.green-btn:hover{
     color: rgba(255, 255, 255, 1);
     position: relative;
     top: 1px;
-}
+}    
 
 /* Second section - Episodes */
 
@@ -266,6 +264,7 @@ section#guests div.guests-grid{
 }
 
 section#guests div.guests-grid img{
+    width: 100%;
     height: 243px;
 }
 
@@ -287,7 +286,7 @@ section#topics h1{
 
 section#topics div.cards-container{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     width: 100%;
     padding-top: 2.31rem;
@@ -398,8 +397,9 @@ footer i{
 
 /* Media Queries */
 
-@media screen and (min-width: 480px) {
-    /* Navbar */    
+@media screen and (min-width: 769px) {
+
+    /* Navbar*/
     nav#navbar-container{
         height: 80px;
         align-items: center;
@@ -441,12 +441,12 @@ footer i{
         letter-spacing: 0;
         line-height: 28px;
         height: 80px;
-        cursor: pointer;       
+        cursor: pointer;
     }
 
     nav ul li:hover{
         color: rgba(0, 243, 187, 1); 
-        text-decoration: line-through;
+        text-decoration: line-through;      
         transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
     }
 
@@ -458,7 +458,7 @@ footer i{
     /*First section - Welcome*/
 
     section#welcome{
-        padding: 7.5rem 1rem 0 12.5rem;
+        padding: 7.5rem 1.11vw 0 13.89vw;
     }
 
     section#welcome h1{
@@ -477,7 +477,7 @@ footer i{
         color: rgba (6, 10, 36, 1);
         letter-spacing: 0;
         line-height: 1.375rem;
-        padding-right: 48em;
+        padding-right: 46.67vw;
         padding-bottom: 3.5rem;
     }
 
@@ -501,7 +501,7 @@ footer i{
     /* Second Section - Episodes */
 
     section#episodes{
-        padding: 11.625rem 6.25rem 14.54rem 6.25rem;
+        padding: 11.625rem 6.94vw 14.54rem 6.94vw;
     }
     
     section#episodes.cover-mask{
@@ -513,23 +513,22 @@ footer i{
         color: rgba(255, 255, 255, 1);
         letter-spacing: 0;
         line-height: 3.875rem;
-        padding-left: 6.25rem;
+        padding-left: 6.94vw;
         padding-bottom: 1.625rem;
     }
 
     section#episodes div.players-grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 72px;
+        gap: 5vw;
     }
 
     /* Third section - About us */
 
     section#about-us{
         display: flex;
-        flex-flow: row nowrap;  
-        padding-left: 12.5rem; 
-        padding-right: 16rem;    
+        flex-flow: row nowrap; 
+        padding: 0 17.78vw 0 13.89vw; 
     }
 
     section#about-us img{
@@ -549,7 +548,7 @@ footer i{
 
     section#about-us div#about-info{
         padding-top: 1.275rem;
-        padding-left: 7rem;
+        padding-left: 7.78vw;
         align-self: flex-start;
     }
 
@@ -571,7 +570,7 @@ footer i{
     section#guests h1{
         font-size: 3rem;
         line-height: 3.875rem;
-        padding: 4rem 0rem 0 12.5rem;       
+        padding: 4rem 0rem 0 13.89vw;       
         
     }
 
@@ -587,7 +586,6 @@ footer i{
     }
 
     /* Fifth section - Topics */
-
     section#topics{
         display: flex;
         flex-flow: column nowrap;
@@ -601,7 +599,7 @@ footer i{
 
     section#topics div.cards-container{
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-around;
         align-items: baseline;
         width: 100%;
@@ -610,7 +608,7 @@ footer i{
     }
 
     section#topics div.cards-container div.card p{
-        padding: 1.81rem 0 0 0;
+        padding: 1.81rem 0 2.12rem 0;
     }
 
     /* Sixth section - News */
@@ -660,7 +658,81 @@ footer i{
         font-size: 1.125rem;
         width: 1.12rem;
     }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px)  {
+
+    /* Second Section - Episodes */
+    section#episodes div.players-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.44vw;
+    }
+
+    /* Fourth section - Guests */
+    section#guests div.guests-grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding-top: 2.25rem; 
+    }    
+
+    section#guests div.guests-grid img{
+        height: 25.28vw;
+        width: 100%;
+    }
+
+    /* Fifth section - Topics */
+    section#topics div.cards-container{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        width: 100%;
+        padding: 4.312rem 0 0 1rem;
+        margin-right: -1rem;
+    }
+
+    /* Episodes and News Masks */
+    section#episodes.cover-mask{
+        clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
+    }
+
+    section#news.cover-mask2{
+        clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
+    }
 
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+
+    section#welcome h1 {
+        line-height: 3.5rem;    
+    }
+
+    section#welcome p {
+        padding-right: 5.25rem;
+    }
+
+    section#about-us{
+        flex-flow: column nowrap;
+        padding: 0 5.25rem 0 13.89vw;
+    }
+
+    section#about-us div#about-info{
+        padding-left: 0;
+    }   
+    
+    /* Episodes and News Masks */
+    section#episodes.cover-mask{
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }    
+
+      section#news.cover-mask2{
+        clip-path: polygon(0 20.21%, 100% 0, 100% 100%, 0 100%);
+    }
+   
+}
+
+
 
 
