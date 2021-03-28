@@ -12,14 +12,13 @@
 	font-size: 16px;
     text-decoration: none;
 }
-/*max-width: 1200px;*/
 
 main#main-container{
-    width: 100%;        
-} /* WARNING: min-width? */
+    width: 100%;
+    min-width: 300px;        
+}
 
 /* Navbar */
-
 nav#navbar-container{
     position: relative;
     display: flex;
@@ -34,6 +33,7 @@ nav img#logo{
     height: 24px;
     width: 24px;
     cursor: pointer;
+    transition: height .5s ease-in-out, width .5s ease-in-out; 
 }
 
 nav label{
@@ -41,7 +41,7 @@ nav label{
     align-self: center;
 }
 
-nav label .icon-container {
+nav label .icon-container{
     display: flex;
     justify-content: space-between;
     flex-flow: column nowrap;
@@ -50,7 +50,7 @@ nav label .icon-container {
     cursor: pointer;
   }
 
-  nav label .icon-line {
+  nav label .icon-line{
     height: 16.6%;
     width: 100%;
     background-color: rgba(6,10,36,1);
@@ -109,6 +109,7 @@ section#welcome{
     display: flex;
     flex-flow: column nowrap;
     padding: 1.82rem 1rem 1.5rem 1rem;
+    transition: padding .5s ease-in-out;
 }
 
 section#welcome h1{
@@ -121,6 +122,7 @@ section#welcome h1{
     line-height: 2.625rem;
     padding-right: 1.875rem;
     padding-bottom: 1rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 section#welcome h1 > span:first-child{
@@ -153,7 +155,7 @@ section#welcome p > span:last-child{
     display: none;
 }
 
-a.green-btn{
+a.primary-btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,15 +168,15 @@ a.green-btn{
     text-align: center;
     line-height: 1.375rem;
     height: 48px;
-    transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-a.green-btn:hover{
+a.primary-btn:hover{
     background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
     color: rgba(255, 255, 255, 1);
     position: relative;
     top: 1px;
-}
+    transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+}    
 
 /* Second section - Episodes */
 
@@ -183,10 +185,12 @@ section#episodes{
     flex-flow: column nowrap;
     padding: 4rem 0.69rem 9rem 0.69rem;
     background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
+    transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
 
 section#episodes.cover-mask{
     clip-path: polygon(0 2.7%, 100% 0, 100% 97.3%, 0 100%);
+    transition: clip-path .4s linear;
 }
 
 section#episodes > h1{
@@ -196,12 +200,14 @@ section#episodes > h1{
     color: rgba(255, 255, 255, 1);
     letter-spacing: 0;
     line-height: 2.625rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 section#episodes div.players-grid{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 11px;
+    transition: padding .5s ease-in-out, grid-template-columns .5s ease-in-out, gap .5s ease-in-out;
 }
 
 /* Third section - About us */
@@ -214,14 +220,15 @@ section#about-us{
 
 section#about-us *:not(div,img) {
     padding: 0 1rem 0.5rem 1rem; 
+    transition: padding .5s ease-in-out;
 }
 
 section#about-us img{
     width: 320px;
     height: 519px;
-    margin-top: -5.97rem;
-    margin-bottom: 1.69rem;
+    margin: -5.97rem 0 1.69rem 0; 
     z-index:1;
+    transition:margin .5s ease-in-out, height .5s ease-in-out, width .5s ease-in-out;
 }
 
 section#about-us h1{
@@ -230,7 +237,8 @@ section#about-us h1{
     color: rgba(6, 10, 36, 1);
     letter-spacing: 0;
     line-height: 2.625rem;
-    padding-bottom: 0.5rem;    
+    padding-bottom: 0.5rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;    
 }
 
 section#about-us p{
@@ -239,6 +247,7 @@ section#about-us p{
     color: rgba(6, 10, 36, 1);
     letter-spacing: 0;
     line-height: 1.375rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 /* Fourth section - Guests */
@@ -255,6 +264,7 @@ section#guests h1{
     letter-spacing: 0;
     line-height: 2.625rem;
     padding: 3.375rem 1rem 0 1rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 section#guests div.guests-grid{
@@ -262,11 +272,13 @@ section#guests div.guests-grid{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
-    padding-top: 0.875rem; 
+    padding-top: 0.875rem;  
+    transition: padding .5s ease-in-out;
 }
 
 section#guests div.guests-grid img{
-    height: 243px;
+    width: 100%;
+    height: 243px;    
 }
 
 /* Fifth section - Topics */
@@ -283,11 +295,12 @@ section#topics h1{
     color: rgba(6, 10, 36, 1);
     letter-spacing: 0;
     line-height: 2.625rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 section#topics div.cards-container{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     width: 100%;
     padding-top: 2.31rem;
@@ -310,11 +323,10 @@ section#topics div.cards-container div.card p{
     font-weight: 600;
     font-size: 1.5rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
+    letter-spacing: 0px;
     line-height: 2rem;
     padding: 0.812rem 0 4.06rem 0;
     text-align: center;
-    max-width: 13.75rem;
 }
 
 /* Sixth section - News */
@@ -324,10 +336,12 @@ section#news{
     flex-flow: column nowrap;
     padding: 4rem 1rem 0rem 1rem;
     background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
+    transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
 
 section#news.cover-mask2{
     clip-path: polygon(0 10.51%, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path .4s linear;
 }
 
 section#news > h1{
@@ -338,10 +352,12 @@ section#news > h1{
     letter-spacing: 0;
     line-height: 2.625rem;
     text-align: center;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#news a.green-btn{
+section#news a.primary-btn{
     margin-bottom: 4.19rem;
+    transition: margin .5s ease-in-out, color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
 /* Footer */
@@ -351,7 +367,8 @@ footer#footer-container{
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
-    padding: 1.5rem 2.875rem 1.94rem 2.875rem; 
+    padding: 1.5rem 2.875rem 1.94rem 2.875rem;
+    transition: padding .5s ease-in-out;
 }
 
 footer p{
@@ -361,6 +378,7 @@ footer p{
     line-height: 1.375rem;
     letter-spacing: 0;
     padding-bottom: 1rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
 footer div#icons-container{
@@ -398,8 +416,9 @@ footer i{
 
 /* Media Queries */
 
-@media screen and (min-width: 480px) {
-    /* Navbar */    
+@media screen and (min-width: 769px) {
+
+    /* Navbar*/
     nav#navbar-container{
         height: 80px;
         align-items: center;
@@ -441,12 +460,12 @@ footer i{
         letter-spacing: 0;
         line-height: 28px;
         height: 80px;
-        cursor: pointer;       
+        cursor: pointer;
     }
 
     nav ul li:hover{
         color: rgba(0, 243, 187, 1); 
-        text-decoration: line-through;
+        text-decoration: line-through;      
         transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
     }
 
@@ -458,7 +477,7 @@ footer i{
     /*First section - Welcome*/
 
     section#welcome{
-        padding: 7.5rem 1rem 0 12.5rem;
+        padding: 7.5rem 1.11vw 0 13.89vw;
     }
 
     section#welcome h1{
@@ -477,7 +496,7 @@ footer i{
         color: rgba (6, 10, 36, 1);
         letter-spacing: 0;
         line-height: 1.375rem;
-        padding-right: 48em;
+        padding-right: 46.67vw;
         padding-bottom: 3.5rem;
     }
 
@@ -490,7 +509,7 @@ footer i{
         display: inline;
     }
 
-    a.green-btn{
+    a.primary-btn{
         font-size: 18px;
         color: rgb(6, 10, 36, 1);
         line-height: 24px;
@@ -501,7 +520,7 @@ footer i{
     /* Second Section - Episodes */
 
     section#episodes{
-        padding: 11.625rem 6.25rem 14.54rem 6.25rem;
+        padding: 11.625rem 6.94vw 14.54rem 6.94vw;
     }
     
     section#episodes.cover-mask{
@@ -513,23 +532,21 @@ footer i{
         color: rgba(255, 255, 255, 1);
         letter-spacing: 0;
         line-height: 3.875rem;
-        padding-left: 6.25rem;
+        padding-left: 6.94vw;
         padding-bottom: 1.625rem;
     }
 
     section#episodes div.players-grid{
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 72px;
+        gap: 5vw;
     }
 
     /* Third section - About us */
 
     section#about-us{
         display: flex;
-        flex-flow: row nowrap;  
-        padding-left: 12.5rem; 
-        padding-right: 16rem;    
+        flex-flow: row nowrap; 
+        padding: 0 17.78vw 0 13.89vw; 
     }
 
     section#about-us img{
@@ -548,9 +565,9 @@ footer i{
     }
 
     section#about-us div#about-info{
-        padding-top: 1.275rem;
-        padding-left: 7rem;
+        padding: 1.275rem 0 0 7.78vw;
         align-self: flex-start;
+        transition: padding .5s ease-in-out;
     }
 
     section#about-us p{
@@ -571,7 +588,7 @@ footer i{
     section#guests h1{
         font-size: 3rem;
         line-height: 3.875rem;
-        padding: 4rem 0rem 0 12.5rem;       
+        padding: 4rem 0rem 0 13.89vw;       
         
     }
 
@@ -587,7 +604,6 @@ footer i{
     }
 
     /* Fifth section - Topics */
-
     section#topics{
         display: flex;
         flex-flow: column nowrap;
@@ -601,7 +617,7 @@ footer i{
 
     section#topics div.cards-container{
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-around;
         align-items: baseline;
         width: 100%;
@@ -610,7 +626,8 @@ footer i{
     }
 
     section#topics div.cards-container div.card p{
-        padding: 1.81rem 0 0 0;
+        padding: 1.81rem 0 2.12rem 0;
+        max-width: 13.75rem;
     }
 
     /* Sixth section - News */
@@ -630,7 +647,7 @@ footer i{
         clip-path: polygon(0 29.1%, 100% 0, 100% 100%, 0 100%);
     }
 
-    section#news a.green-btn{
+    section#news a.primary-btn{
         width: 21.56rem;
         margin-bottom: 0;
     }
@@ -660,7 +677,84 @@ footer i{
         font-size: 1.125rem;
         width: 1.12rem;
     }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px)  {
+
+    /* Second Section - Episodes */
+    section#episodes div.players-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.44vw;
+    }
+
+    /* Fourth section - Guests */
+    section#guests div.guests-grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding-top: 2.25rem; 
+    }    
+
+    section#guests div.guests-grid img{
+        height: 25.28vw;
+        width: 100%;
+    }
+
+    /* Fifth section - Topics */
+    section#topics div.cards-container{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        width: 100%;
+        padding: 4.312rem 0 0 1rem;
+        margin-right: -1rem;
+    }
+
+    section#topics div.cards-container div.card p{
+        max-width: 18rem;
+    }
+
+    /* Episodes and News Masks */
+    section#episodes.cover-mask{
+        clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
+    }
+
+    section#news.cover-mask2{
+        clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
+    }
 
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+
+    section#welcome h1 {
+        line-height: 3.5rem;    
+    }
+
+    section#welcome p {
+        padding-right: 5.25rem;
+    }
+
+    section#about-us{
+        flex-flow: column nowrap;
+        padding: 0 5.25rem 0 13.89vw;
+    }
+
+    section#about-us div#about-info{
+        padding-left: 0;
+    }   
+    
+    /* Episodes and News Masks */
+    section#episodes.cover-mask{
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }    
+
+      section#news.cover-mask2{
+        clip-path: polygon(0 20.21%, 100% 0, 100% 100%, 0 100%);
+    }
+   
+}
+
+
 
 
