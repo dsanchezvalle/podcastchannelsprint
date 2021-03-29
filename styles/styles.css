@@ -67,15 +67,20 @@ nav ul{
     width: inherit;
     position: absolute;
     top: 44px;
-    display: none;
+    left:101vw;
+    transform: translateX(100%);
+    transition: transform .4s linear;
+    margin: 0;
 }
 
 nav input#collapsible-check{
+    opacity: 0;
     display: none;
 }
 
 nav input#collapsible-check:checked ~ ul{
-  display:block;
+  transform: translateX(0);
+  left:0vw;
 }
 
 nav input#collapsible-check:checked + label#collapsible-icon .icon-container .icon-line:first-child{
@@ -451,6 +456,8 @@ footer i{
         justify-content: flex-end;
         position: relative;
         top: 0;
+        left: 0;
+        transform: translateX(0);
         margin-right: 100px;
     }   
         
