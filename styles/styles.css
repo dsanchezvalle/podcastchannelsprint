@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
 
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -13,41 +14,57 @@
     text-decoration: none;
 }
 
-main#main-container{
+/* || General Styles */
+
+.container{
+    display: flex;
+}
+
+.container--vertical{
+    flex-flow: column nowrap;
+}
+
+.container--horizontal{
+    flex-flow: row nowrap; 
+}
+
+.align-center{
+    align-items: center;
+}
+
+.main-container {
     width: 100%;
     min-width: 300px;  
 }
 
-/* Navbar */
-nav#navbar-container{    
+/* ||  Navbar */
+.nav-container {
+    justify-content: space-between;
     position: fixed;
     top:0;
-    display: flex;
     height: 44px;
     width: 100%;    
-    align-items: center;
-    justify-content: space-between;
     z-index: 2;
     background-color: rgba(255,255,255,0.97);
 }
 
-nav a{
+.logo {
     margin-left: 5%;    
     cursor: pointer;    
 }
 
-img#logo{
+.logo__img {
     height: 24px;
     width: 24px;
     transition: height .5s ease-in-out, width .5s ease-in-out; 
 }
 
-nav label{
+.burger-icon {
     margin-right: 6%;
     align-self: center;
 }
 
-nav label .icon-container{
+.burger-icon__container {
     display: flex;
     justify-content: space-between;
     flex-flow: column nowrap;
@@ -56,14 +73,36 @@ nav label .icon-container{
     cursor: pointer;
   }
 
-  nav label .icon-line{
+.burger-icon__line {
     height: 16.6%;
     width: 100%;
     background-color: rgba(6,10,36,1);
     transition: transform 0.2s ease, opacity 0.2s ease;
   }    
 
-nav ul{ 
+#collapsible-check {
+    opacity: 0;
+    display: none;
+}
+
+#collapsible-check:checked ~ ul {
+  transform: translateX(0);
+  left:0;
+}
+
+#collapsible-check:checked + .burger-icon .burger-icon__line:first-child{
+    transform: translateY(250%) rotate(45deg);       
+  }
+
+#collapsible-check:checked + .burger-icon .burger-icon__line:nth-child(2){
+    opacity: 0
+  }
+
+#collapsible-check:checked + .burger-icon .burger-icon__line:last-child{
+    transform: translateY(-250%) rotate(-45deg);
+  }
+
+.menu { 
     width: inherit;
     position: absolute;
     top: 44px;
@@ -73,29 +112,7 @@ nav ul{
     margin: 0;
 }
 
-nav input#collapsible-check{
-    opacity: 0;
-    display: none;
-}
-
-nav input#collapsible-check:checked ~ ul{
-  transform: translateX(0);
-  left:0vw;
-}
-
-nav input#collapsible-check:checked + label#collapsible-icon .icon-container .icon-line:first-child{
-    transform: translateY(250%) rotate(45deg);       
-  }
-
-  nav input#collapsible-check:checked + label#collapsible-icon .icon-container .icon-line:nth-child(2){
-    opacity: 0
-  }
-
-  nav input#collapsible-check:checked + label#collapsible-icon .icon-container .icon-line:last-child{
-    transform: translateY(-250%) rotate(-45deg);
-  }
-
-nav ul li{
+.menu__item{
     display: block;
     background: rgba(0,0,236,1);
     padding-left: 1rem;
@@ -110,15 +127,13 @@ nav ul li{
     cursor: pointer;
 }
 
-nav ul li a{
+.menu__item > a {
     color: inherit;
-    text-decoration: none;
 }
 
-/* First section - Welcome */
-section#welcome{
-    display: flex;
-    flex-flow: column nowrap;
+/* || First section - Welcome */
+
+#welcome {    
     padding: 4.563rem 1rem 1.5rem 1rem;
     transition: padding .5s ease-in-out;
 }
@@ -189,11 +204,9 @@ a.primary-btn:hover{
     transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }    
 
-/* Second section - Episodes */
+/* || Second section - Episodes */
 
-section#episodes{
-    display: flex;
-    flex-flow: column nowrap;
+section#episodes{    
     padding: 4rem 0.69rem 9rem 0.69rem;
     background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
     transition: padding .5s ease-in-out, height .5s ease-in-out;
@@ -221,13 +234,7 @@ section#episodes div.players-grid{
     transition: padding .5s ease-in-out, grid-template-columns .5s ease-in-out, gap .5s ease-in-out;
 }
 
-/* Third section - About us */
-
-section#about-us{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;    
-}
+/* || Third section - About us */
 
 section#about-us *:not(div,img) {
     padding: 0 1rem 0.5rem 1rem; 
@@ -261,12 +268,7 @@ section#about-us p{
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-/* Fourth section - Guests */
-
-section#guests{
-    display: flex;
-    flex-flow: column nowrap;
-}
+/* || Fourth section - Guests */
 
 section#guests h1{
     font-family: 'IBM Plex Sans', sans-serif;
@@ -282,7 +284,6 @@ section#guests div.guests-grid{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 0;
     padding-top: 0.875rem;  
     transition: padding .5s ease-in-out;
 }
@@ -292,12 +293,12 @@ section#guests div.guests-grid img{
     height: 243px;    
 }
 
-/* Fifth section - Topics */
+/* || Fifth section - Topics */
 
 section#topics{
     display: flex;
     flex-flow: column nowrap;
-    padding: 3rem 1rem 0 1rem;
+    padding: 3rem 1rem 0;
 }
 
 section#topics h1{
@@ -334,13 +335,13 @@ section#topics div.cards-container div.card p{
     font-weight: 600;
     font-size: 1.5rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0px;
+    letter-spacing: 0;
     line-height: 2rem;
     padding: 0.812rem 0 4.06rem 0;
     text-align: center;
 }
 
-/* Sixth section - News */
+/* || Sixth section - News */
 
 section#news{
     display: flex;
@@ -371,7 +372,7 @@ section#news a.primary-btn{
     transition: margin .5s ease-in-out, color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-/* Footer */
+/* || Footer */
 
 footer#footer-container{
     display: flex;
@@ -425,33 +426,72 @@ footer i{
     font-size: 0.7rem;
 }
 
-/* Media Queries */
+/* || Media Queries */
+
+@media screen and (min-width: 481px) {
+
+    /* Second Section - Episodes */
+    section#episodes div.players-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.44vw;
+    }
+
+    /* Fourth section - Guests */
+    section#guests div.guests-grid{
+        grid-template-columns: repeat(3, 1fr);
+        padding-top: 2.25rem; 
+    }    
+
+    section#guests div.guests-grid img{
+        height: 25.28vw;
+    }
+
+    /* Fifth section - Topics */
+    section#topics div.cards-container{
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        padding: 4.312rem 0 0 1rem;
+        margin-right: -1rem;
+    }
+
+    section#topics div.cards-container div.card p{
+        max-width: 18rem;
+    }
+
+    /* Episodes and News Masks */
+    section#episodes.cover-mask{
+        clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
+    }
+
+    section#news.cover-mask2{
+        clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
+    }
+
+}
 
 @media screen and (min-width: 769px) {
 
     /* Navbar*/
-    nav#navbar-container{
+    .nav-container {
         height: 80px;
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
     }
 
-    nav label{
+    .burger-icon{
      visibility: hidden;
     }
 
-    nav a {
+    .logo {
         margin-left: 7%;
     }  
 
-    img#logo{
+    .logo__img {
         height: 36px;
         width: 36px;
         cursor: pointer;
     }
 
-    nav ul{ 
+    .menu { 
         display: flex;
         justify-content: flex-end;
         position: relative;
@@ -461,9 +501,9 @@ footer i{
         margin-right: 100px;
     }   
         
-    nav ul li{
+    .menu__item{
         background-color: rgba(255,255,255,0.1);
-        padding: 26px 0px;
+        padding: 26px 0;
         margin-left:48px;
         font-size: 16px;
         color: #060A24;
@@ -473,20 +513,20 @@ footer i{
         cursor: pointer;
     }
 
-    nav ul li:hover{
+    .menu__item:hover{
         color: rgba(0, 243, 187, 1); 
         text-decoration: line-through;      
         transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
     }
 
-    nav ul li:active{
+    .menu__item:active{
         color: rgb(6, 10, 36, 0.56); 
         text-decoration: line-through;      
     }
 
     /*First section - Welcome*/
 
-    section#welcome{
+    #welcome{
         padding: 12.5rem 1.11vw 0 13.89vw;
     }
 
@@ -547,14 +587,12 @@ footer i{
     }
 
     section#episodes div.players-grid{
-        grid-template-columns: repeat(2, 1fr);
         gap: 5vw;
     }
 
     /* Third section - About us */
 
     section#about-us{
-        display: flex;
         flex-flow: row nowrap; 
         padding: 0 17.78vw 0 13.89vw; 
     }
@@ -590,34 +628,19 @@ footer i{
 
     /* Fourth section - Guests */
 
-    section#guests{
-        display: flex;
-        flex-flow: column nowrap;
-    }
-
     section#guests h1{
         font-size: 3rem;
         line-height: 3.875rem;
-        padding: 4rem 0rem 0 13.89vw;       
-        
+        padding: 4rem 0rem 0 13.89vw;
     }
 
     section#guests div.guests-grid{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
         padding-top: 2.25rem; 
-    }
-
-    section#guests div.guests-grid img{
-        height: 25.28vw;
-        width: 100%;
     }
 
     /* Fifth section - Topics */
     section#topics{
-        display: flex;
-        flex-flow: column nowrap;
-        padding: 4rem 13.89vw 2.12rem 13.89vw;
+        padding: 4rem 13.89vw 0 13.89vw;
     }
 
     section#topics h1{
@@ -626,13 +649,7 @@ footer i{
     }
 
     section#topics div.cards-container{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: baseline;
-        width: 100%;
         padding: 4.312rem 0 0 1rem;
-        margin-right: -1rem;
     }
 
     section#topics div.cards-container div.card p{
@@ -665,11 +682,8 @@ footer i{
     /* Footer */
 
     footer#footer-container{
-        display: flex;
         flex-flow: row nowrap;
-        align-items: center;
         justify-content: space-between;
-        width: 100%;
         padding: 2.25rem 6.25rem 1.94rem 6.25rem; 
     }
 
@@ -687,52 +701,6 @@ footer i{
         font-size: 1.125rem;
         width: 1.12rem;
     }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px)  {
-
-    /* Second Section - Episodes */
-    section#episodes div.players-grid{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3.44vw;
-    }
-
-    /* Fourth section - Guests */
-    section#guests div.guests-grid{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        padding-top: 2.25rem; 
-    }    
-
-    section#guests div.guests-grid img{
-        height: 25.28vw;
-        width: 100%;
-    }
-
-    /* Fifth section - Topics */
-    section#topics div.cards-container{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: baseline;
-        width: 100%;
-        padding: 4.312rem 0 0 1rem;
-        margin-right: -1rem;
-    }
-
-    section#topics div.cards-container div.card p{
-        max-width: 18rem;
-    }
-
-    /* Episodes and News Masks */
-    section#episodes.cover-mask{
-        clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
-    }
-
-    section#news.cover-mask2{
-        clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
-    }
-
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px)  {
