@@ -229,34 +229,32 @@ h1, h2, p, a {
 
 /* || Third section - About us */
 
-section#about-us *:not(div,img) {
-    padding: 0 1rem 0.5rem 1rem; 
-    transition: padding .5s ease-in-out;
-}
-
-section#about-us img{
+.about-us__img {
     width: 320px;
     height: 519px;
-    margin: -5.97rem 0 1.69rem 0; 
-    z-index:1;
+    margin: -5.97rem 0 1.688rem; 
+    z-index: 1;
     transition:margin .5s ease-in-out, height .5s ease-in-out, width .5s ease-in-out;
 }
 
-section#about-us h1{
+.about-us__title {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgba(6, 10, 36, 1);
     line-height: 2.625rem;
     padding-bottom: 0.5rem;
-    transition: padding .5s ease-in-out, font-size .5s ease-in-out;    
 }
 
-section#about-us p{
+.about-us__content {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.875rem;
     color: rgba(6, 10, 36, 1);
     line-height: 1.375rem;
-    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.about-us__title, .about-us__content {
+    padding: 0 1rem 0.5rem; 
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;    
 }
 
 /* || Fourth section - Guests */
@@ -266,7 +264,7 @@ section#guests h1{
     font-size: 2.25rem;
     color: rgb(6, 10, 36, 1);
     line-height: 2.625rem;
-    padding: 3.375rem 1rem 0 1rem;
+    padding: 2.875rem 1rem 0;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
@@ -577,38 +575,33 @@ footer i{
 
     /* Third section - About us */
 
-    section#about-us{
+    .about-us {
         flex-flow: row nowrap; 
         padding: 0 17.78vw 0 13.89vw; 
     }
 
-    section#about-us img{
+    .about-us__img {
         width: 457.6px;
         height: 660px;
-        margin-top: -10.54rem;
-        margin-bottom: 0;
+        margin: -10.54rem 0 0;
     }
 
-    section#about-us h1{
-        font-family: 'IBM Plex Sans', sans-serif;
+    .about-us__title {
         font-size: 3rem;
         line-height: 3.875rem;
-        padding-bottom: 1.5rem;
-        padding-left: 0;   
+        padding: 0 1rem 1.5rem 0;
     }
 
-    section#about-us div#about-info{
+    .about-us__info-wrapper {
         padding: 1.275rem 0 0 7.78vw;
         align-self: flex-start;
         transition: padding .5s ease-in-out;
     }
 
-    section#about-us p{
-        font-family: 'IBM Plex Mono', monospace;
+    .about-us__content {
         font-size: 1rem;
         line-height: 1.5rem;
-        padding-right: 0;
-        padding-left: 0;
+        padding: 0 0 0.5rem;
     }
 
     /* Fourth section - Guests */
@@ -698,12 +691,12 @@ footer i{
         padding-right: 5.25rem;
     }
 
-    section#about-us{
+    .about-us {
         flex-flow: column nowrap;
         padding: 0 5.25rem 0 13.89vw;
     }
 
-    section#about-us div#about-info{
+    .about-us__info-wrapper {
         padding-left: 0;
     }   
     
