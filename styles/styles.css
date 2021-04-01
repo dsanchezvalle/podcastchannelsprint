@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
 
+:root{
+    font-size: 16px;
+}
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     border: 0 none;
-	outline: 0;    
-    font-weight: inherit;
-	font-family: inherit;
-	font-style: inherit;
-	font-size: 16px;
-    text-decoration: none;
+	outline: 0;   /*revisar*/  
 }
 
 /* || General Styles */
@@ -31,6 +29,16 @@
 .align-center{
     align-items: center;
 }
+/*REVISAR*****************************/
+a{
+    text-decoration: none;
+}
+/*REVISAR*/
+h1, h2, p, a {
+    font-weight: inherit;
+    letter-spacing: 0;
+}
+
 
 .main-container {
     width: 100%;
@@ -38,7 +46,7 @@
 }
 
 /* ||  Navbar */
-.nav-container {
+.nav {
     justify-content: space-between;
     position: fixed;
     top:0;
@@ -121,7 +129,6 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1rem;
     color: rgba(255,255,255,1);
-    letter-spacing: 0;
     line-height: 1.75rem;
     height: 56px;
     cursor: pointer;
@@ -133,51 +140,40 @@
 
 /* || First section - Welcome */
 
-#welcome {    
+.welcome {    
     padding: 4.563rem 1rem 1.5rem 1rem;
     transition: padding .5s ease-in-out;
 }
 
-section#welcome h1{
+.welcome__title {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     font-weight: 400;
     font-style: normal;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
-    padding-right: 1.875rem;
-    padding-bottom: 1rem;
+    padding: 0 1.875rem 1rem 0;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#welcome h1 > span:first-child{
-    text-decoration: line-through;
-    font-size: inherit;
-}
-
-section#welcome h1 > span:last-child{
+.welcome__dot {
     margin-left: -0.2em;
 }
 
-section#welcome h1 > span:last-child{
-    font-size: inherit;
-}
-
-section#welcome p{
+.welcome__content {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.875rem;
-    color: rgba (6, 10, 36, 1);
-    letter-spacing: 0;
+    color: rgba(6, 10, 36, 1);
     line-height: 1.375rem;
     padding-bottom: 2.25rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#welcome p > span:first-child{
+.welcome__content > .mobile-text {
     font-size: inherit;
 }
 
-section#welcome p > span:last-child{
+.welcome__content > .desktop-text{
     display: none;
 }
 
@@ -190,7 +186,6 @@ a.primary-btn{
     background-color: #00F3BB;
     font-size: 1rem;
     color: rgb(6, 10, 36, 1);
-    letter-spacing: 0;
     text-align: center;
     line-height: 1.375rem;
     height: 48px;
@@ -222,7 +217,6 @@ section#episodes > h1{
     padding-bottom: 1.31rem;
     font-size: 2.25rem;
     color: rgba(255, 255, 255, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -253,7 +247,6 @@ section#about-us h1{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
     padding-bottom: 0.5rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;    
@@ -263,7 +256,6 @@ section#about-us p{
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.875rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 1.375rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -274,7 +266,6 @@ section#guests h1{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgb(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
     padding: 3.375rem 1rem 0 1rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
@@ -305,7 +296,6 @@ section#topics h1{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -335,7 +325,6 @@ section#topics div.cards-container div.card p{
     font-weight: 600;
     font-size: 1.5rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 2rem;
     padding: 0.812rem 0 4.06rem 0;
     text-align: center;
@@ -361,7 +350,6 @@ section#news > h1{
     padding-bottom: 2.25rem;
     font-size: 2.25rem;
     color: rgba(255, 255, 255, 1);
-    letter-spacing: 0;
     line-height: 2.625rem;
     text-align: center;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
@@ -388,7 +376,6 @@ footer p{
     color: rgba(6, 10, 36, 1);
     font-size: 0.875rem;
     line-height: 1.375rem;
-    letter-spacing: 0;
     padding-bottom: 1rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -414,7 +401,6 @@ footer a{
 footer i{
     font-size: 1rem;
     color: rgba(6, 10, 36, 1);
-    letter-spacing: 0;
     line-height: 1.75rem;
     width: 1rem;
 }
@@ -473,7 +459,7 @@ footer i{
 @media screen and (min-width: 769px) {
 
     /* Navbar*/
-    .nav-container {
+    .nav {
         height: 80px;
     }
 
@@ -498,7 +484,7 @@ footer i{
         top: 0;
         left: 0;
         transform: translateX(0);
-        margin-right: 100px;
+        margin-right: 6.94vw;
     }   
         
     .menu__item{
@@ -507,7 +493,7 @@ footer i{
         margin-left:48px;
         font-size: 16px;
         color: #060A24;
-        letter-spacing: 0;
+
         line-height: 28px;
         height: 80px;
         cursor: pointer;
@@ -526,35 +512,33 @@ footer i{
 
     /*First section - Welcome*/
 
-    #welcome{
+    .welcome {
         padding: 12.5rem 1.11vw 0 13.89vw;
     }
 
-    section#welcome h1{
+    .welcome__title {
         font-size: 4rem;        
         color: rgba(6, 10, 36, 1);
         line-height: 2.625rem;
         padding-right: 5.25rem;
     }   
 
-    section#welcome h1 > span:last-child{
-        color: rgba(0, 0, 236, 1);    
-    }    
+    .welcome__dot {
+        color: rgba(0, 0, 236, 1);  
+    }  
 
-    section#welcome p{
-        font-size: 0.875rem;
-        color: rgba (6, 10, 36, 1);
-        letter-spacing: 0;
-        line-height: 1.375rem;
-        padding-right: 46.67vw;
+    .welcome__content {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-right: 41.39vw; /*REVISAR**************/
         padding-bottom: 3.5rem;
     }
 
-    section#welcome p > span:first-child{
+    .welcome__content > .mobile-text {
         display: none;
     }
     
-    section#welcome p > span:last-child{
+    .welcome__content > .desktop-text{
         font-size: inherit;
         display: inline;
     }
@@ -580,7 +564,7 @@ footer i{
     section#episodes > h1{             
         font-size: 3rem;
         color: rgba(255, 255, 255, 1);
-        letter-spacing: 0;
+
         line-height: 3.875rem;
         padding-left: 6.94vw;
         padding-bottom: 1.625rem;
@@ -709,7 +693,7 @@ footer i{
         line-height: 3.5rem;    
     }
 
-    section#welcome p {
+    .welcome__content {
         padding-right: 5.25rem;
     }
 
