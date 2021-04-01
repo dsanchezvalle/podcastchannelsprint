@@ -200,27 +200,27 @@ h1, h2, p, a {
 
 /* || Second section - Episodes */
 
-section#episodes{    
+.episodes {    
     padding: 4rem 0.69rem 9rem 0.69rem;
     background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
     transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
 
-section#episodes.cover-mask{
+.cover-mask {
     clip-path: polygon(0 2.7%, 100% 0, 100% 97.3%, 0 100%);
     transition: clip-path .4s linear;
 }
 
-section#episodes > h1{
+.episodes__title {
     font-family: 'IBM Plex Sans', sans-serif;
-    padding-bottom: 1.31rem;
     font-size: 2.25rem;
     color: rgba(255, 255, 255, 1);
     line-height: 2.625rem;
+    padding-bottom: 1.31rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#episodes div.players-grid{
+.episodes__players-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 11px;
@@ -417,7 +417,7 @@ footer i{
 @media screen and (min-width: 481px) {
 
     /* Second Section - Episodes */
-    section#episodes div.players-grid{
+    .episodes__players-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 3.44vw;
     }
@@ -446,7 +446,7 @@ footer i{
     }
 
     /* Episodes and News Masks */
-    section#episodes.cover-mask{
+    .cover-mask {
         clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
     }
 
@@ -557,24 +557,21 @@ footer i{
 
     /* Second Section - Episodes */
 
-    section#episodes{
+    .episodes {
         padding: 11.625rem 6.94vw 14.54rem 6.94vw;
     }
     
-    section#episodes.cover-mask{
+    .cover-mask {
         clip-path: polygon(0 14.4%, 100% 0, 100% 85.6%, 0 100%);
     }
 
-    section#episodes > h1{             
+    .episodes__title {             
         font-size: 3rem;
-        color: rgba(255, 255, 255, 1);
-
         line-height: 3.875rem;
-        padding-left: 6.94vw;
-        padding-bottom: 1.625rem;
+        padding: 0 0 1.625rem 6.94vw;
     }
 
-    section#episodes div.players-grid{
+    .episodes__players-grid {
         gap: 5vw;
     }
 
@@ -711,7 +708,7 @@ footer i{
     }   
     
     /* Episodes and News Masks */
-    section#episodes.cover-mask{
+    .cover-mask {
         clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     }    
 
