@@ -39,6 +39,27 @@ h1, h2, p, a {
     letter-spacing: 0;
 }
 
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 48px;    
+    background-color: #00F3BB;
+    color: rgb(6, 10, 36, 1);    
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.375rem;       
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    top: 1px;
+    transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+}   
 
 .main-container {
     width: 100%;
@@ -176,28 +197,6 @@ h1, h2, p, a {
 .welcome__content > .desktop-text{
     display: none;
 }
-
-a.primary-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    background-color: #00F3BB;
-    font-size: 1rem;
-    color: rgb(6, 10, 36, 1);
-    text-align: center;
-    line-height: 1.375rem;
-    height: 48px;
-}
-
-a.primary-btn:hover{
-    background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-    color: rgba(255, 255, 255, 1);
-    position: relative;
-    top: 1px;
-    transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
-}    
 
 /* || Second section - Episodes */
 
@@ -355,10 +354,11 @@ section#news > h1{
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#news a.primary-btn{
+/* btn-primary */
+.news__button {
     margin-bottom: 4.19rem;
     transition: margin .5s ease-in-out, color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
-}
+} 
 
 /* || Footer */
 
@@ -458,6 +458,14 @@ footer i{
 
 @media screen and (min-width: 769px) {
 
+    /* General Styles*/
+
+    .btn-primary{
+        height: 56px;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
+
     /* Navbar*/
     .nav {
         height: 80px;
@@ -543,12 +551,8 @@ footer i{
         display: inline;
     }
 
-    a.primary-btn{
-        font-size: 18px;
-        color: rgb(6, 10, 36, 1);
-        line-height: 24px;
-        height: 56px;
-        width: 226px;
+    .welcome__button {
+        width: 14.125rem;
     }
 
     /* Second Section - Episodes */
@@ -658,7 +662,7 @@ footer i{
         clip-path: polygon(0 29.1%, 100% 0, 100% 100%, 0 100%);
     }
 
-    section#news a.primary-btn{
+    .news__button {
         width: 21.56rem;
         margin-bottom: 0;
     }
