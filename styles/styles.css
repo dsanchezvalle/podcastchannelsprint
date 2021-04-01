@@ -259,7 +259,7 @@ h1, h2, p, a {
 
 /* || Fourth section - Guests */
 
-section#guests h1{
+.guests__title {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgb(6, 10, 36, 1);
@@ -268,7 +268,7 @@ section#guests h1{
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#guests div.guests-grid{
+.guests__grid {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -276,7 +276,7 @@ section#guests div.guests-grid{
     transition: padding .5s ease-in-out;
 }
 
-section#guests div.guests-grid img{
+.guests__img {
     width: 100%;
     height: 243px;    
 }
@@ -421,12 +421,12 @@ footer i{
     }
 
     /* Fourth section - Guests */
-    section#guests div.guests-grid{
+    .guests__grid {
         grid-template-columns: repeat(3, 1fr);
-        padding-top: 2.25rem; 
+        padding-top: 1.5rem; 
     }    
 
-    section#guests div.guests-grid img{
+    .guests__img {
         height: 25.28vw;
     }
 
@@ -606,13 +606,13 @@ footer i{
 
     /* Fourth section - Guests */
 
-    section#guests h1{
+    .guests__title {
         font-size: 3rem;
         line-height: 3.875rem;
         padding: 4rem 0rem 0 13.89vw;
     }
 
-    section#guests div.guests-grid{
+    .guests__grid {
         padding-top: 2.25rem; 
     }
 
