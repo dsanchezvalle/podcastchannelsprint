@@ -326,20 +326,18 @@ h1, h2, h3, p, a {
 
 /* || Sixth section - News */
 
-section#news{
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 4rem 1rem 0rem 1rem;
+.news {
+    padding: 4rem 1rem 0rem;
     background: linear-gradient(225deg, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 163,1) 100%);
     transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
 
-section#news.cover-mask2{
+.cover-mask2 {
     clip-path: polygon(0 10.51%, 100% 0, 100% 100%, 0 100%);
     transition: clip-path .4s linear;
 }
 
-section#news > h1{
+.news__title {
     font-family: 'IBM Plex Sans', sans-serif;
     padding-bottom: 2.25rem;
     font-size: 2.25rem;
@@ -349,7 +347,6 @@ section#news > h1{
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-/* btn-primary */
 .news__button {
     margin-bottom: 4.19rem;
     transition: margin .5s ease-in-out, color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
@@ -357,16 +354,13 @@ section#news > h1{
 
 /* || Footer */
 
-footer#footer-container{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+.footer {
     width: 100%;
     padding: 1.5rem 2.875rem 1.94rem 2.875rem;
     transition: padding .5s ease-in-out;
 }
 
-footer p{
+.footer__content {
     font-family: 'IBM Plex Mono', monospace;
     color: rgba(6, 10, 36, 1);
     font-size: 0.875rem;
@@ -374,7 +368,7 @@ footer p{
     padding-bottom: 1rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
-
+/*AQUÍ: revisar container y vertical */
 footer div#icons-container{
     display: flex;
     justify-content: space-between;
@@ -445,7 +439,7 @@ footer i{
         clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
     }
 
-    section#news.cover-mask2{
+    .cover-mask2 {
         clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
     }
 
@@ -521,7 +515,6 @@ footer i{
 
     .welcome__title {
         font-size: 4rem;        
-        color: rgba(6, 10, 36, 1);
         line-height: 2.625rem;
         padding-right: 5.25rem;
     }   
@@ -634,18 +627,18 @@ footer i{
 
     /* Sixth section - News */
 
-    section#news{
-        padding: 13.31rem 0rem 9.44rem 0rem;
+    .news {
         align-items: center;
+        padding: 13.31rem 0rem 9.44rem;
     }
 
-    section#news h1{
+    .news__title {
         font-size: 3rem;
         text-align: center;
         line-height: 3.875rem;
     }
     
-    section#news.cover-mask2{
+    .cover-mask2 {
         clip-path: polygon(0 29.1%, 100% 0, 100% 100%, 0 100%);
     }
 
@@ -656,13 +649,13 @@ footer i{
 
     /* Footer */
 
-    footer#footer-container{
+    .footer {
         flex-flow: row nowrap;
         justify-content: space-between;
         padding: 2.25rem 6.25rem 1.94rem 6.25rem; 
     }
 
-    footer p{
+    .footer__content {
         font-size: 1rem;
         line-height: 1.75rem;
         padding-bottom: 0;
@@ -680,8 +673,8 @@ footer i{
 
 @media screen and (min-width: 769px) and (max-width: 1024px)  {
 
-    section#welcome h1 {
-        line-height: 3.5rem;    
+    .welcome__title {
+        line-height: 3.5rem;   
     }
 
     .welcome__content {
@@ -702,7 +695,7 @@ footer i{
         clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     }    
 
-      section#news.cover-mask2{
+      .cover-mask2 {
         clip-path: polygon(0 20.21%, 100% 0, 100% 100%, 0 100%);
     }
    
