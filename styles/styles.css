@@ -34,7 +34,7 @@ a{
     text-decoration: none;
 }
 /*REVISAR*/
-h1, h2, p, a {
+h1, h2, h3, p, a {
     font-weight: inherit;
     letter-spacing: 0;
 }
@@ -283,13 +283,11 @@ h1, h2, p, a {
 
 /* || Fifth section - Topics */
 
-section#topics{
-    display: flex;
-    flex-flow: column nowrap;
+.topics {
     padding: 3rem 1rem 0;
 }
 
-section#topics h1{
+.topics__title {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.25rem;
     color: rgba(6, 10, 36, 1);
@@ -297,27 +295,26 @@ section#topics h1{
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
-section#topics div.cards-container{
+.topics__card-wrapper {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     width: 100%;
     padding-top: 2.31rem;
+    transition: padding .5s ease-in-out;
 }
 
-section#topics div.cards-container div.card{
-    display: flex;
-    flex-flow: column nowrap;
+.topics__card {
     align-items: center;
     justify-content: center;
 }
 
-section#topics div.cards-container div.card img{
+.topics__img {
     width: 104px;
     height: 104px;
 }
 
-section#topics div.cards-container div.card p{
+.topics__name {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
@@ -431,14 +428,14 @@ footer i{
     }
 
     /* Fifth section - Topics */
-    section#topics div.cards-container{
+    .topics__card-wrapper {
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: baseline;
         padding: 4.312rem 0 0 1rem;
     }
 
-    section#topics div.cards-container div.card p{
+    .topics__name {
         padding: 0.812rem 2rem 4.06rem;
         max-width: 20.75rem;
     }
@@ -617,20 +614,20 @@ footer i{
     }
 
     /* Fifth section - Topics */
-    section#topics{
-        padding: 4rem 13.89vw 0 13.89vw;
+    .topics {
+        padding: 4rem 13.89vw 0;
     }
 
-    section#topics h1{
+    .topics__title {
         font-size: 3rem;
         line-height: 3.875rem;
     }
 
-    section#topics div.cards-container{
+    .topics__card-wrapper {
         padding: 4.312rem 0 0 1rem;
     }
 
-    section#topics div.cards-container div.card p{
+    .topics__name {
         padding: 1.81rem 1rem 2.12rem;
         max-width: 14.75rem;
     }
