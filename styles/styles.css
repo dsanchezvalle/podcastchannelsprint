@@ -323,7 +323,7 @@ section#topics div.cards-container div.card p{
     font-size: 1.5rem;
     color: rgba(6, 10, 36, 1);
     line-height: 2rem;
-    padding: 0.812rem 0 4.06rem 0;
+    padding: 0.812rem 0 4.06rem;
     text-align: center;
 }
 
@@ -436,11 +436,11 @@ footer i{
         justify-content: space-around;
         align-items: baseline;
         padding: 4.312rem 0 0 1rem;
-        margin-right: -1rem;
     }
 
     section#topics div.cards-container div.card p{
-        max-width: 18rem;
+        padding: 0.812rem 2rem 4.06rem;
+        max-width: 20.75rem;
     }
 
     /* Episodes and News Masks */
@@ -631,8 +631,8 @@ footer i{
     }
 
     section#topics div.cards-container div.card p{
-        padding: 1.81rem 0 2.12rem 0;
-        max-width: 13.75rem;
+        padding: 1.81rem 1rem 2.12rem;
+        max-width: 14.75rem;
     }
 
     /* Sixth section - News */
