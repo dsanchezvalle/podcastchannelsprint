@@ -5,7 +5,8 @@
     --main-bg-color: rgba(255, 255, 255, 1);
     --secondary-bg-color: rgba(0, 0, 236, 1); /*Check*/
     --start-bg-grad-color: rgba(0, 0, 255, 1); 
-    --end-bg-grad-color: rgba(0, 0, 163, 1);   
+    --end-bg-grad-color: rgba(0, 0, 163, 1); 
+    --nav-bg-color: rgba(255, 255, 255, .97);   
     --primary-btn-color: rgba(0, 243, 187, 1);
     --start-hover-color: var(--start-bg-grad-color);
     --end-hover-color: var(--primary-btn-color);
@@ -90,7 +91,7 @@ h1, h2, h3, p, a {
     height: 44px;
     width: 100%;    
     z-index: 2;
-    background-color: rgba(255, 255, 255, .97);
+    background-color: var(--nav-bg-color);
 }
 
 .logo {
