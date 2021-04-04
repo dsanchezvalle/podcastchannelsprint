@@ -2,6 +2,7 @@
 
 :root{
     font-size: 16px;
+    /* Colors */
     --main-bg-color: rgba(255, 255, 255, 1);
     --secondary-bg-color: rgba(0, 0, 236, 1); /*Check*/
     --start-bg-grad-color: rgba(0, 0, 255, 1); 
@@ -13,6 +14,24 @@
     --primary-font-color: rgba(6, 10, 36, 1);
     --secondary-font-color: rgba(255, 255, 255, 1);
     --icons-color: var(--primary-font-color);
+
+    /* Mobile Font Sizes (Mobile first approach) */
+    --main-title-font-sm: 2.25rem;
+    --secondary-title-font-sm: 2.25rem;
+    --tertiary-title-font-sm: 1.5rem;
+    --content-font-sm: 0.875rem;
+    --utilities-font-sm: 1rem;
+    --menu-item-font-sm: 1rem;
+    --hidden-item-font-sm: 0.7rem;
+
+    /* Medium Font Sizes */
+    --main-title-font-md: calc(var(--main-title-font-sm)*(14/9));
+    --secondary-title-font-md: calc(var(--secondary-title-font-sm)*(4/3));    
+    --content-font-md: calc(var(--content-font-sm)*(8/7)); 
+    --utilities-font-sm: calc(var(--utilities-font-sm)*(9/8));
+    
+    /* Large Font Sizes */
+    --main-title-font-lg: calc(var(--main-title-font-md)*(8/7));
 }
 
 .bg-gradient{
@@ -158,7 +177,7 @@ h1, h2, h3, p, a {
     margin: 0;
 }
 
-.menu__item{
+.menu__item {
     display: block;
     background: var(--secondary-bg-color);
     padding-left: 1rem;
@@ -494,11 +513,8 @@ h1, h2, h3, p, a {
         background-color: transparent;
         padding: 26px 0;
         margin-left:48px;
-        font-size: 16px;
         color: var(--primary-font-color);
-        line-height: 28px;
         height: 80px;
-        cursor: pointer;
     }
 
     .menu__item:hover {
