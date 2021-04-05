@@ -50,18 +50,19 @@
     --main-title-line-lg: var(--main-title-line-md);
 }
 
-.title-font{
+.title-font {
     font-family: var(--main-font);
     font-size: var(--main-title-font-sm);
     line-height: var(--main-title-line-sm);
 }
 
-.content-font{
+.content-font {
     font-family: var(--secondary-font);
-    
+    font-size: var(--content-font-sm);
+    line-height: var(--content-line-sm);
 }
 
-.bg-gradient{
+.bg-gradient {
     background: linear-gradient(225deg, var(--start-bg-grad-color) 0%, var(--end-bg-grad-color) 100%);
     transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
@@ -76,19 +77,19 @@
 
 /* || General Styles */
 
-.container{
+.container {
     display: flex;
 }
 
-.container--vertical{
+.container--vertical {
     flex-flow: column nowrap;
 }
 
-.container--horizontal{
+.container--horizontal {
     flex-flow: row nowrap; 
 }
 
-.align-center{
+.align-center {
     align-items: center;
 }
 /*REVISAR*****************************/
@@ -242,10 +243,7 @@ h1, h2, h3, p, a {
 }
 
 .welcome__content {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.875rem;
     color: var(--primary-font-color);
-    line-height: 1.375rem;
     padding-bottom: 2.25rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -298,10 +296,7 @@ h1, h2, h3, p, a {
 }
 
 .about-us__content {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.875rem;
     color: var(--primary-font-color);
-    line-height: 1.375rem;
 }
 
 .about-us__title, .about-us__content {
@@ -402,10 +397,7 @@ h1, h2, h3, p, a {
 }
 
 .footer__content {
-    font-family: 'IBM Plex Mono', monospace;
     color: var(--primary-font-color);
-    font-size: 0.875rem;
-    line-height: 1.375rem;
     padding-bottom: 1rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
