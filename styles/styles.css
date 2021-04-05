@@ -3,7 +3,7 @@
 :root{    
     /* Colors */
     --main-bg-color: rgba(255, 255, 255, 1);
-    --secondary-bg-color: rgba(0, 0, 236, 1); /*Check*/
+    --secondary-bg-color: rgba(0, 0, 236, 1);
     --start-bg-grad-color: rgba(0, 0, 255, 1); 
     --end-bg-grad-color: rgba(0, 0, 163, 1); 
     --nav-bg-color: rgba(255, 255, 255, .97);   
@@ -14,12 +14,12 @@
     --secondary-font-color: rgba(255, 255, 255, 1);
     --icons-color: var(--primary-font-color);
 
-    /* Font-families */
+    /* Fonts */
     --main-font: 'IBM Plex Sans', sans-serif;
     --secondary-font: 'IBM Plex Mono', monospace;
 
-    /* Mobile font size and line-height (Mobile first approach) */
-    font-size: 16px; /*Base font size (root reference)*/
+    /* Mobile font-sizes and line-heights (Mobile first approach) */
+    font-size: 16px; /*Base-Reference font size*/
     --main-title-font-sm: 2.25rem;
     --main-title-line-sm: 1.167;
     --secondary-title-font-sm: 2.25rem;
@@ -34,7 +34,7 @@
     --menu-item-line-sm: 1.75; 
     --hidden-icon-text-font: 0.7rem;
 
-    /* Medium size and line-height */
+    /* Medium (min 769px screens) font-sizes and line-heights */
     --main-title-font-md: calc(var(--main-title-font-sm)*(14/9));
     --main-title-line-md: calc(var(--main-title-line-sm)*1.12);
     --secondary-title-font-md: calc(var(--secondary-title-font-sm)*(4/3));
@@ -44,44 +44,19 @@
     --utilities-font-md: calc(var(--utilities-font-sm)*(9/8));
     --utilities-line-md: calc(var(--utilities-line-sm)*.97);
     
-    /* Large size and line-height */
+    /* Large (min 1024px screens) font-size and line-height */
     --main-title-font-lg: calc(var(--main-title-font-md)*(8/7));
     --main-title-line-lg: var(--main-title-line-md);
 }
 
-.title-font {
-    font-family: var(--main-font);
-    font-size: var(--main-title-font-sm);
-    line-height: var(--main-title-line-sm);
-}
-
-/* Content: paragraphs */
-.content-font {
-    font-family: var(--secondary-font);
-    font-size: var(--content-font-sm);
-    line-height: var(--content-line-sm);
-}
-
-/*Utilities: buttons and icons*/
-.utilities-font {
-    font-size: var(--utilities-font-sm);
-    line-height: var(--utilities-line-sm);
-}
-
-.bg-gradient {
-    background: linear-gradient(225deg, var(--start-bg-grad-color) 0%, var(--end-bg-grad-color) 100%);
-    transition: padding .5s ease-in-out, height .5s ease-in-out;
-}
-
+/* || General Styles */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     border: 0 none;
-	outline: 0;   /*revisar*/  
+	outline: 0;
 }
-
-/* || General Styles */
 
 .container {
     display: flex;
@@ -91,21 +66,41 @@
     flex-flow: column nowrap;
 }
 
-.container--horizontal {
-    flex-flow: row nowrap; 
-}
-
 .align-center {
     align-items: center;
 }
-/*REVISAR*****************************/
-a{
+
+.menu__item > a, .btn-primary, .footer__icon-link {
     text-decoration: none;
 }
-/*REVISAR*/
-h1, h2, h3, p, a {
+
+.title-font, .content-font, .utilities-font, .menu__item {
     font-weight: inherit;
     letter-spacing: 0;
+}
+
+.title-font {
+    font-family: var(--main-font);
+    font-size: var(--main-title-font-sm);
+    line-height: var(--main-title-line-sm);
+}
+
+/* Content: paragraphs fonts */
+.content-font {
+    font-family: var(--secondary-font);
+    font-size: var(--content-font-sm);
+    line-height: var(--content-line-sm);
+}
+
+/* Utilities: buttons and icons fonts */
+.utilities-font {
+    font-size: var(--utilities-font-sm);
+    line-height: var(--utilities-line-sm);
+}
+
+.bg-gradient {
+    background: linear-gradient(225deg, var(--start-bg-grad-color) 0%, var(--end-bg-grad-color) 100%);
+    transition: padding .5s ease-in-out, height .5s ease-in-out;
 }
 
 .btn-primary {
@@ -128,13 +123,14 @@ h1, h2, h3, p, a {
     transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }   
 
+/* || Mobile first styles */
 .main-container {
     width: 100%;
     min-width: 300px;
     background-color: var(--main-bg-color); 
 }
 
-/* ||  Navbar */
+/* ||  Navbar: includes logo and collapsible menu */
 .nav {
     justify-content: space-between;
     position: fixed;
@@ -161,7 +157,7 @@ h1, h2, h3, p, a {
     align-self: center;
 }
 
-.burger-icon__container {
+.burger-icon__wrapper {
     display: flex;
     justify-content: space-between;
     flex-flow: column nowrap;
@@ -177,25 +173,25 @@ h1, h2, h3, p, a {
     transition: transform 0.2s ease, opacity 0.2s ease;
   }    
 
-#collapsible-check {
+.collapsible-check {
     opacity: 0;
     display: none;
 }
 
-#collapsible-check:checked ~ ul {
+.collapsible-check:checked ~ .menu {
   transform: translateX(0);
   left:0;
 }
 
-#collapsible-check:checked + .burger-icon .burger-icon__line:first-child{
+.collapsible-check:checked + .burger-icon .burger-icon__line:first-child{
     transform: translateY(250%) rotate(45deg);       
   }
 
-#collapsible-check:checked + .burger-icon .burger-icon__line:nth-child(2){
+.collapsible-check:checked + .burger-icon .burger-icon__line:nth-child(2){
     opacity: 0
   }
 
-#collapsible-check:checked + .burger-icon .burger-icon__line:last-child{
+.collapsible-check:checked + .burger-icon .burger-icon__line:last-child{
     transform: translateY(-250%) rotate(-45deg);
   }
 
@@ -415,13 +411,13 @@ h1, h2, h3, p, a {
     width: 1rem;
 }
 
-/* Links accesibility */
+/* Links text for accesibility */
 .visually-hidden {
     opacity: 0;
     font-size: var(--hidden-icon-text-font);
 }
 
-/* || Media Queries */
+/* || Media Query 1 */
 @media screen and (min-width: 481px) {
 
     /* Second Section - Episodes */
@@ -464,9 +460,10 @@ h1, h2, h3, p, a {
 
 }
 
+/* || Media Query 2 */
 @media screen and (min-width: 769px) {
 
-    /* General styles for min-769px */
+    /* General styles */
     .title-font {
         font-size: var(--secondary-title-font-md);
         line-height: var(--secondary-title-line-md);
@@ -486,13 +483,13 @@ h1, h2, h3, p, a {
         height: 56px;
     }
 
-    /* Navbar*/
+    /* Navbar */
     .nav {
         height: 80px;
     }
 
     .burger-icon{
-     visibility: hidden;
+        visibility: hidden;
     }
 
     .logo {
@@ -659,7 +656,7 @@ h1, h2, h3, p, a {
         width: 1.12rem;
     }
 
-    /*Masks*/
+    /* Masks */
     .cover-mask {
         clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     }    
@@ -669,6 +666,7 @@ h1, h2, h3, p, a {
     }
 }
 
+/* || Media Query 3 */
 @media screen and (min-width: 1024px) {
 
     /* Sections */
