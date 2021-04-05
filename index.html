@@ -6,114 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://kit.fontawesome.com/e99771cd0e.js" crossorigin="anonymous"></script>
-    <title>My Podcast Channel</title>
+    <title>Blue Dot - Podcast Channel</title>
 </head>
 <body>
-    <main id="main-container">
+    <main class="main-container">
         <header>
-            <nav id="navbar-container" role="navigation" aria-label="Main">
-                <a href="#welcome">
-                    <img id="logo" src="images/logo.svg" alt="Logo Podcast Channel">
+            <nav class="container align-center nav" role="navigation" aria-label="Main">
+                <a class="logo" href="#welcome">
+                    <img class="logo__img" src="images/logo.svg" alt="Logo Podcast Channel">
                 </a>
-                <input type="checkbox" id="collapsible-check">
-                <label id="collapsible-icon" for="collapsible-check">
-                    <div class="icon-container">
-                        <div class="icon-line"></div>
-                        <div class="icon-line"></div>
-                        <div class="icon-line"></div>       
+                <input type="checkbox" class="collapsible-check" id="collapsible-check">
+                <label class="burger-icon" for="collapsible-check">
+                    <div class="burger-icon__wrapper">
+                        <div class="burger-icon__line"></div>
+                        <div class="burger-icon__line"></div>
+                        <div class="burger-icon__line"></div>       
                     </div>
                 </label>            
-                <ul>
-                    <li><a href="#episodes">EPISODIOS</a></li>
-                    <li><a href="#about-us">NOSOTROS</a></li>
-                    <li><a href="#guests">ENTREVISTAS</a></li>
-                    <li><a href="#topics">TÓPICOS</a></li>
+                <ul class="menu">
+                    <li class="menu__item"><a href="#episodes">EPISODIOS</a></li>
+                    <li class="menu__item"><a href="#about-us">NOSOTROS</a></li>
+                    <li class="menu__item"><a href="#guests">ENTREVISTAS</a></li>
+                    <li class="menu__item"><a href="#topics">TÓPICOS</a></li>
                 </ul>
             </nav> 
         </header>
-        <section id="welcome">
-            <h1>Hello <span>world</span> pale blue dot <span>.</span></h1>
-            <p>
+        <section id="welcome" class="container container--vertical welcome">
+            <h1 class="welcome__title title-font">Hello <del>world</del> pale blue dot <span class="welcome__dot">.</span></h1>
+            <p class="welcome__content content-font">
                 <span class="mobile-text">Un podcast que explora el mundo de la programación.</span> 
-                <span class="screen-text">El portal de podcasts que explora el mundo de la programación y la tecnología.</span>
+                <span class="desktop-text">El portal de podcasts que explora el mundo de la programación y la tecnología.</span>
                 Nuevos episodios, todos los jueves cada 15 días.
             </p>
-            <a href="#about-us" class="primary-btn">CONOCÉ MÁS</a>
+            <a href="#about-us" class="btn-primary welcome__button utilities-font">CONOCÉ MÁS</a>
         </section>
-        <section id="episodes" class="cover-mask">
-            <h1>Episodios</h1>
-            <div class="players-grid">
+        <section id="episodes" class="container container--vertical episodes bg-gradient cover-mask">
+            <h2 class="episodes__title title-font">Episodios</h2>
+            <div class="episodes__players-grid">
                 <iframe src="https://open.spotify.com/embed-podcast/show/0iW21xFsrH509BGTEs3ufN" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                                
                 <iframe src="https://open.spotify.com/embed-podcast/show/2Iibd5A6R7mxkCm4NwNmUn" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 <iframe src="https://open.spotify.com/embed-podcast/show/34XATz63JArAtDkBCXO3zh" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 <iframe src="https://open.spotify.com/embed-podcast/show/5nrht623D18vfFdjgvpKBh" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
         </section>
-        <section id="about-us">
-            <img src="images/about/phone.png" alt="Phone with a photo and an article including the secret history of women in coding">
-            <div id="about-info">
-                <h1>De dónde venimos</h1>
-                <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light.</p>
-                <p>Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.</p>
+        <section id="about-us" class="container container--vertical align-center about-us">
+            <img class="about-us__img about-us__img-cover" src="images/about/phone.png" alt="Phone with a photo and an article including the secret history of women in coding">
+            <div class="about-us__info-wrapper">
+                <h2 class="about-us__title title-font">De dónde venimos</h2>
+                <p class="about-us__content content-font">
+                    Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light.
+                </p>
+                <p class="about-us__content content-font">
+                    Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.
+                </p>
             </div>
         </section>
-        <section id="guests">
-            <h1>Invitadas/os estelares</h1>
-            <div class="guests-grid">
-                <img src="images/guests/guest1.png" alt="Grace Hopper a pioneer woman in programming and computer science" class="guest-photo">
-                <img src="images/guests/guest2.png" alt="Computer scientist Katie Bouman with a stack of hard drives used to process the first black hole image" class="guest-photo">
-                <img src="images/guests/guest3.png" alt="Margaret Hamilton next to listings of the software she and her MIT team produced for the Apollo project" class="guest-photo">
-                <img src="images/guests/guest4.png" alt="Two women with an E.R.A. Univac 1103 computer in the 1950s" class="guest-photo">
-                <img src="images/guests/guest5.png" alt="Computer operators with an Eniac the world’s first programmable general-purpose computer" class="guest-photo">
-                <img src="images/guests/guest6.png" alt="Susan Kare graphic designer known for her interface elements contributions to the first Apple Macintosh" class="guest-photo">
+        <section id="guests" class="container container--vertical">
+            <h2 class="guests__title title-font">Invitadas/os estelares</h2>
+            <div class="guests__grid">
+                <img class="guests__img" src="images/guests/guest1.png" alt="Grace Hopper a pioneer woman in programming and computer science">
+                <img class="guests__img" src="images/guests/guest2.png" alt="Computer scientist Katie Bouman with a stack of hard drives used to process the first black hole image">
+                <img class="guests__img" src="images/guests/guest3.png" alt="Margaret Hamilton next to listings of the software she and her MIT team produced for the Apollo project">
+                <img class="guests__img" src="images/guests/guest4.png" alt="Two women with an E.R.A. Univac 1103 computer in the 1950s">
+                <img class="guests__img" src="images/guests/guest5.png" alt="Computer operators with an Eniac the world’s first programmable general-purpose computer">
+                <img class="guests__img" src="images/guests/guest6.png" alt="Susan Kare graphic designer known for her interface elements contributions to the first Apple Macintosh">
             </div>
         </section>
-        <section id="topics">
-            <h1>Algunos de nuestros temas</h1>
-            <div class="cards-container">
-                <div class="card">
-                    <img src="images/topics/icon1.svg" alt="Continúa a Trabajo remoto">
-                    <p>Trabajo remoto</p>
+        <section id="topics" class="container container--vertical topics">
+            <h2 class="topics__title title-font">Algunos de nuestros temas</h2>
+            <div class="topics__card-wrapper">
+                <div class="container container--vertical topics__card">
+                    <img class="topics__img" src="images/topics/icon1.svg" alt="Continúa a Trabajo remoto">
+                    <h3 class="topics__name">Trabajo remoto</h3>
                 </div>
-                <div class="card">
-                    <img src="images/topics/icon2.svg" alt="Continúa a Repensando la programación">
-                    <p>Repensando la programación</p>
+                <div class="container container--vertical topics__card">
+                    <img class="topics__img" src="images/topics/icon2.svg" alt="Continúa a Repensando la programación">
+                    <h3 class="topics__name">Repensando la programación</h3>
                 </div>
-                <div class="card">
-                    <img src="images/topics/icon3.svg" alt="Continúa a Bases del código">
-                    <p>Bases del Código</p>
+                <div class="container container--vertical topics__card">
+                    <img class="topics__img" src="images/topics/icon3.svg" alt="Continúa a Bases del código">
+                    <h3 class="topics__name">Bases del Código</h3>
                 </div>
-                <div class="card">
-                    <img src="images/topics/icon4.svg" alt="Continúa a Seguridad informática">
-                    <p>Seguridad Informática</p>
+                <div class="container container--vertical topics__card">
+                    <img class="topics__img" src="images/topics/icon4.svg" alt="Continúa a Seguridad informática">
+                    <h3 class="topics__name">Seguridad Informática</h3>
                 </div>
             </div>
         </section>
-        <section id="news" class="cover-mask2">
-            <h1>¿Querés las últimas novedades?</h1>
-            <a href="#episodes" class="primary-btn">ESCUCHÁ LOS EPISODIOS</a>
+        <section id="news" class="container container--vertical news bg-gradient cover-mask2">
+            <h2 class="news__title title-font">¿Querés las últimas novedades?</h2>
+            <a class="btn-primary news__button utilities-font" href="#episodes">ESCUCHÁ LOS EPISODIOS</a>
         </section>
-        <footer id="footer-container">
-            <p>© 2019— Hello blue pale dot</p>
-            <div id="icons-container">
-                <a href="https://open.spotify.com/playlist/5vyyG2HOyNJhVweyHOS3qS?si=7eb7c50eddb948ba">
-                    <i class="fab fa-spotify" aria-hidden="true"></i>
+        <footer id="footer" class="container container--vertical align-center footer">
+            <p class="footer__content content-font">© 2019— Hello blue pale dot</p>
+            <div id="icons-container" class="container align-center footer__icons-wrapper">
+                <a  class="container align-center footer__icon-link"
+                    href="https://open.spotify.com/playlist/5vyyG2HOyNJhVweyHOS3qS?si=7eb7c50eddb948ba">
+                    <i class="utilities-font fab fa-spotify footer__icon" aria-hidden="true"></i>
                     <span class="visually-hidden">Spotify</span>
                 </a>
-                <a href="https://www.instagram.com/bluedotpodcastchannel2/">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                <a  class="container align-center footer__icon-link"
+                    href="https://www.instagram.com/bluedotpodcastchannel2/">
+                    <i class="utilities-font fab fa-instagram footer__icon" aria-hidden="true"></i>
                     <span class="visually-hidden">Instagram</span>
                 </a>
-                <a href="https://twitter.com/bluedotpodcast3">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                <a  class="container align-center footer__icon-link"
+                    href="https://twitter.com/bluedotpodcast3">
+                    <i class="utilities-font fab fa-twitter footer__icon" aria-hidden="true"></i>
                     <span class="visually-hidden">Twitter</span>
                 </a>
-                <a href="https://www.facebook.com/Blue-Dot-105798288267972">
-                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                <a  class="container align-center footer__icon-link"
+                    href="https://www.facebook.com/Blue-Dot-105798288267972">
+                    <i class="utilities-font fab fa-facebook footer__icon" aria-hidden="true"></i>
                     <span class="visually-hidden">Facebook</span>
                 </a>
-                <a href="https://t.me/bluedotpodcast">
-                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                <a  class="container align-center footer__icon-link"
+                    href="https://t.me/bluedotpodcast">
+                    <i class="utilities-font fab fa-telegram footer__icon" aria-hidden="true"></i>
                     <span class="visually-hidden">Telegram</span>
                 </a>
             </div>
