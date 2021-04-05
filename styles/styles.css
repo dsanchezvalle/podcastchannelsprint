@@ -50,6 +50,17 @@
     --main-title-line-lg: var(--main-title-line-md);
 }
 
+.title-font{
+    font-family: var(--main-font);
+    font-size: var(--main-title-font-sm);
+    line-height: var(--main-title-line-sm);
+}
+
+.content-font{
+    font-family: var(--secondary-font);
+    
+}
+
 .bg-gradient{
     background: linear-gradient(225deg, var(--start-bg-grad-color) 0%, var(--end-bg-grad-color) 100%);
     transition: padding .5s ease-in-out, height .5s ease-in-out;
@@ -219,12 +230,9 @@ h1, h2, h3, p, a {
 }
 
 .welcome__title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 2.25rem;
     font-weight: 400;
     font-style: normal;
     color: var(--primary-font-color);
-    line-height: 2.625rem;
     padding: 0 1.875rem 1rem 0;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -262,10 +270,7 @@ h1, h2, h3, p, a {
 }
 
 .episodes__title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 2.25rem;
-    color: var(--secondary-font-color);
-    line-height: 2.625rem;
+    color: var(--secondary-font-color);    
     padding-bottom: 1.31rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -288,10 +293,7 @@ h1, h2, h3, p, a {
 }
 
 .about-us__title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 2.25rem;
     color: var(--primary-font-color);
-    line-height: 2.625rem;
     padding-bottom: 0.5rem;
 }
 
@@ -310,10 +312,7 @@ h1, h2, h3, p, a {
 /* || Fourth section - Guests */
 
 .guests__title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 2.25rem;
     color: var(--primary-font-color);
-    line-height: 2.625rem;
     padding: 2.875rem 1rem 0;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
@@ -338,10 +337,7 @@ h1, h2, h3, p, a {
 }
 
 .topics__title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 2.25rem;
     color: var(--primary-font-color);
-    line-height: 2.625rem;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
 
@@ -386,11 +382,8 @@ h1, h2, h3, p, a {
 }
 
 .news__title {
-    font-family: 'IBM Plex Sans', sans-serif;
     padding-bottom: 2.25rem;
-    font-size: 2.25rem;
     color: var(--secondary-font-color);
-    line-height: 2.625rem;
     text-align: center;
     transition: padding .5s ease-in-out, font-size .5s ease-in-out;
 }
