@@ -1,10 +1,10 @@
 # Blue Dot - Podcast Channel
 
-Blue Dot - Podcast Channel is a project in HTML+CSS as part of the first sprint in ACAMICA's Front End Web Development course.
+![Blue Dot Podcast Channel Logo](https://raw.githubusercontent.com/dsanchezvalle/podcastchannelsprint/14a4ff001f5aecf171b929f4a4893e2441c411d7/images/logo.svg) Blue Dot - Podcast Channel is a project in HTML+CSS as part of the first sprint in ACAMICA's Front End Web Development course.
 
 ## Live Demo
 
-The live demo of the project is hosted in Github Pages at: [Access to the Live Demo](https://pending-link.com)
+The live demo of the project is hosted in Github Pages at: [Access to the Live Demo](https://dsanchezvalle.github.io/podcastchannelsprint/)
 
 ## Trello Board
 
