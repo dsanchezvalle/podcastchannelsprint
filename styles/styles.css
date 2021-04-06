@@ -1,23 +1,705 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap');
 
+:root{    
+    /* Colors */
+    --main-bg-color: rgba(255, 255, 255, 1);
+    --secondary-bg-color: rgba(0, 0, 236, 1);
+    --start-bg-grad-color: rgba(0, 0, 255, 1); 
+    --end-bg-grad-color: rgba(0, 0, 163, 1); 
+    --nav-bg-color: rgba(255, 255, 255, .97);   
+    --primary-btn-color: rgba(0, 243, 187, 1);
+    --start-hover-color: var(--start-bg-grad-color);
+    --end-hover-color: var(--primary-btn-color);
+    --primary-font-color: rgba(6, 10, 36, 1);
+    --secondary-font-color: rgba(255, 255, 255, 1);
+    --icons-color: var(--primary-font-color);
+
+    /* Fonts */
+    --main-font: 'IBM Plex Sans', sans-serif;
+    --secondary-font: 'IBM Plex Mono', monospace;
+
+    /* Mobile font-sizes and line-heights (Mobile first approach) */
+    font-size: 16px; /*Base-Reference font size*/
+    --main-title-font-sm: 2.25rem;
+    --main-title-line-sm: 1.167;
+    --secondary-title-font-sm: 2.25rem;
+    --secondary-title-line-sm: 1.167;
+    --tertiary-title-font-sm: 1.5rem;
+    --tertiary-title-line-sm: 1.333;
+    --content-font-sm: 0.875rem;
+    --content-line-sm: 1.571;
+    --utilities-font-sm: 1rem;
+    --utilities-line-sm: 1.375;
+    --menu-item-font-sm: 1rem;
+    --menu-item-line-sm: 1.75; 
+    --hidden-icon-text-font: 0.7rem;
+
+    /* Medium (min 769px screens) font-sizes and line-heights */
+    --main-title-font-md: calc(var(--main-title-font-sm)*(14/9));
+    --main-title-line-md: calc(var(--main-title-line-sm)*1.12);
+    --secondary-title-font-md: calc(var(--secondary-title-font-sm)*(4/3));
+    --secondary-title-line-md: calc(var(--secondary-title-line-sm)*1.11);    
+    --content-font-md: calc(var(--content-font-sm)*(8/7)); 
+    --content-line-md: calc(var(--content-line-sm)*.95);
+    --utilities-font-md: calc(var(--utilities-font-sm)*(9/8));
+    --utilities-line-md: calc(var(--utilities-line-sm)*.97);
+    
+    /* Large (min 1024px screens) font-size and line-height */
+    --main-title-font-lg: calc(var(--main-title-font-md)*(8/7));
+    --main-title-line-lg: var(--main-title-line-md);
+}
+
+/* || General Styles */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     border: 0 none;
 	outline: 0;
-    max-width: 1200px;
-    font-weight: inherit;
-	font-family: inherit;
-	font-style: inherit;
-	font-size: 100%;
 }
 
-body h1{
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 64px;
-    font-weight: 400px;
-    font-style: normal;
-    color: rgba(6, 10, 36, 1);
+.container {
+    display: flex;
+}
+
+.container--vertical {
+    flex-flow: column nowrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.menu__item > a, .btn-primary, .footer__icon-link {
+    text-decoration: none;
+}
+
+.title-font, .content-font, .utilities-font, .menu__item {
+    font-weight: inherit;
     letter-spacing: 0;
+}
+
+.title-font {
+    font-family: var(--main-font);
+    font-size: var(--main-title-font-sm);
+    line-height: var(--main-title-line-sm);
+}
+
+/* Content: paragraphs fonts */
+.content-font {
+    font-family: var(--secondary-font);
+    font-size: var(--content-font-sm);
+    line-height: var(--content-line-sm);
+}
+
+/* Utilities: buttons and icons fonts */
+.utilities-font {
+    font-size: var(--utilities-font-sm);
+    line-height: var(--utilities-line-sm);
+}
+
+.bg-gradient {
+    background: linear-gradient(225deg, var(--start-bg-grad-color) 0%, var(--end-bg-grad-color) 100%);
+    transition: padding .5s ease-in-out, height .5s ease-in-out;
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 48px;    
+    background-color: var(--primary-btn-color);
+    color: var(--primary-font-color);
+    font-family: var(--secondary-font);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(225deg, var(--start-hover-color) 0%, var(--end-hover-color) 100%);
+    color: var(--secondary-font-color);
+    position: relative;
+    top: 1px;
+    transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+}   
+
+/* || Mobile first styles */
+.main-container {
+    width: 100%;
+    min-width: 300px;
+    background-color: var(--main-bg-color); 
+}
+
+/* ||  Navbar: includes logo and collapsible menu */
+.nav {
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    height: 44px;
+    width: 100%;    
+    z-index: 2;
+    background-color: var(--nav-bg-color);
+}
+
+.logo {
+    margin-left: 5%;    
+    cursor: pointer;    
+}
+
+.logo__img {
+    height: 24px;
+    width: 24px;
+    transition: height .5s ease-in-out, width .5s ease-in-out; 
+}
+
+.burger-icon {
+    margin-right: 6%;
+    align-self: center;
+}
+
+.burger-icon__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    height: 12px;
+    width: 18px;
+    cursor: pointer;
+  }
+
+.burger-icon__line {
+    height: 16.6%;
+    width: 100%;
+    background-color: var(--icons-color);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }    
+
+.collapsible-check {
+    opacity: 0;
+    display: none;
+}
+
+.collapsible-check:checked ~ .menu {
+  transform: translateX(0);
+  left:0;
+}
+
+.collapsible-check:checked + .burger-icon .burger-icon__line:first-child{
+    transform: translateY(250%) rotate(45deg);       
+  }
+
+.collapsible-check:checked + .burger-icon .burger-icon__line:nth-child(2){
+    opacity: 0
+  }
+
+.collapsible-check:checked + .burger-icon .burger-icon__line:last-child{
+    transform: translateY(-250%) rotate(-45deg);
+  }
+
+.menu { 
+    width: inherit;
+    position: absolute;
+    top: 44px;
+    left:101vw;
+    transform: translateX(100%);
+    transition: transform .4s linear;
+    margin: 0;
+}
+
+.menu__item {
+    display: block;
+    background: var(--secondary-bg-color);
+    padding-left: 1rem;
+    padding-top: 0.875rem;
+    list-style: none;
+    font-family: var(--secondary-font);
+    font-size: var(--menu-item-font-sm);
+    line-height: var(--menu-item-line-sm);
+    color: var(--secondary-font-color);    
+    height: 56px;
+    cursor: pointer;
+}
+
+.menu__item > a {
+    color: inherit;
+}
+
+/* || First section - Welcome */
+.welcome {    
+    padding: 4.563rem 1rem 1.5rem 1rem;
+    transition: padding .5s ease-in-out;
+}
+
+.welcome__title {
+    font-weight: 400;
+    font-style: normal;
+    color: var(--primary-font-color);
+    padding: 0 1.875rem 1rem 0;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.welcome__dot {
+    margin-left: -0.2em;
+}
+
+.welcome__content {
+    color: var(--primary-font-color);
+    padding-bottom: 2.25rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.welcome__content > .mobile-text {
+    font-size: inherit;
+}
+
+.welcome__content > .desktop-text{
+    display: none;
+}
+
+/* || Second section - Episodes */
+.episodes {    
+    padding: 4rem 0.69rem 9rem 0.69rem;
+}
+
+.cover-mask {
+    clip-path: polygon(0 2.7%, 100% 0, 100% 97.3%, 0 100%);
+    transition: clip-path .4s linear;
+}
+
+.episodes__title {
+    color: var(--secondary-font-color);    
+    padding-bottom: 1.31rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.episodes__players-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 11px;
+    transition: padding .5s ease-in-out, grid-template-columns .5s ease-in-out, gap .5s ease-in-out;
+}
+
+/* || Third section - About us */
+.about-us__img {
+    width: 320px;
+    height: 519px;
+    margin: -5.97rem 0 1.688rem; 
+    z-index: 1;
+    transition:margin .5s ease-in-out, height .5s ease-in-out, width .5s ease-in-out;
+}
+
+.about-us__title {
+    color: var(--primary-font-color);
+    padding-bottom: 0.5rem;
+}
+
+.about-us__content {
+    color: var(--primary-font-color);
+}
+
+.about-us__title, .about-us__content {
+    padding: 0 1rem 0.5rem; 
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;    
+}
+
+/* || Fourth section - Guests */
+.guests__title {
+    color: var(--primary-font-color);
+    padding: 2.875rem 1rem 0;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.guests__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 0.875rem;  
+    transition: padding .5s ease-in-out;
+}
+
+.guests__img {
+    width: 100%;
+    height: 243px;    
+}
+
+/* || Fifth section - Topics */
+.topics {
+    padding: 3rem 1rem 0;
+}
+
+.topics__title {
+    color: var(--primary-font-color);
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.topics__card-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 100%;
+    padding-top: 2.31rem;
+    transition: padding .5s ease-in-out;
+}
+
+.topics__card {
+    align-items: center;
+    justify-content: center;
+}
+
+.topics__img {
+    width: 104px;
+    height: 104px;
+}
+
+.topics__name {
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: var(--tertiary-title-font-sm);
+    line-height: var(--tertiary-title-line-sm);
+    color: var(--primary-font-color);
+    padding: 0.812rem 0 2.625rem;
+    text-align: center;
+}
+
+/* || Sixth section - News */
+.news {
+    padding: 4rem 1rem 0rem;
+}
+
+.cover-mask2 {
+    clip-path: polygon(0 10.51%, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path .4s linear;
+}
+
+.news__title {
+    padding-bottom: 2.25rem;
+    color: var(--secondary-font-color);
+    text-align: center;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.news__button {
+    margin-bottom: 4.19rem;
+    transition: margin .5s ease-in-out, color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+} 
+
+/* || Footer */
+.footer {
+    width: 100%;
+    padding: 1.5rem 2.875rem 1.94rem 2.875rem;
+    transition: padding .5s ease-in-out;
+}
+
+.footer__content {
+    color: var(--primary-font-color);
+    padding-bottom: 1rem;
+    transition: padding .5s ease-in-out, font-size .5s ease-in-out;
+}
+
+.footer__icons-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    height: 1.75rem;
+}
+
+.footer__icon-link {    
+    flex-direction: column;
+    margin: 0 -0.75rem -0.7rem;
+}
+
+.footer__icon {
+    color: var(--icons-color);
+    width: 1rem;
+}
+
+/* Links text for accesibility */
+.visually-hidden {
+    opacity: 0;
+    font-size: var(--hidden-icon-text-font);
+}
+
+/* || Media Query 1 */
+@media screen and (min-width: 481px) {
+
+    /* Second Section - Episodes */
+    .episodes__players-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.44vw;
+    }
+
+    /* Fourth section - Guests */
+    .guests__grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding-top: 1.5rem; 
+    }    
+
+    .guests__img {
+        height: 25.28vw;
+    }
+
+    /* Fifth section - Topics */
+    .topics__card-wrapper {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        padding: 4.312rem 0 0 1rem;
+    }
+
+    .topics__name {
+        padding: 0.812rem 2rem 4.06rem;
+        max-width: 20.75rem;
+    }
+
+    /* Episodes and News Masks */
+    .cover-mask {
+        clip-path: polygon(0 5.6%, 100% 0, 100% 94.4%, 0 100%);
+    }
+
+    .cover-mask2 {
+        clip-path: polygon(0 16.42%, 100% 0, 100% 100%, 0 100%);
+    }
+
+}
+
+/* || Media Query 2 */
+@media screen and (min-width: 769px) {
+
+    /* General styles */
+    .title-font {
+        font-size: var(--secondary-title-font-md);
+        line-height: var(--secondary-title-line-md);
+    }
+
+    .content-font {
+        font-size: var(--content-font-md);
+        line-height: var(--content-line-md);
+    }
+
+    .utilities-font {
+        font-size: var(--utilities-font-md);
+        line-height: var(--utilities-line-md);
+    }
+
+    .btn-primary{
+        height: 56px;
+    }
+
+    /* Navbar */
+    .nav {
+        height: 80px;
+    }
+
+    .burger-icon{
+        visibility: hidden;
+    }
+
+    .logo {
+        margin-left: 7%;
+    }  
+
+    .logo__img {
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+    }
+
+    .menu { 
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        margin-right: 6.94vw;
+    }   
+        
+    .menu__item {
+        background-color: transparent;
+        padding: 26px 0;
+        margin-left:48px;
+        color: var(--primary-font-color);
+        height: 80px;
+    }
+
+    .menu__item:hover {
+        color: var(--end-hover-color);
+        text-decoration: line-through;      
+        transition: color 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+    }
+
+    .menu__item:active {
+        color: var(--primary-font-color);
+        opacity: .56; 
+        text-decoration: line-through;      
+    }
+
+    /*First section - Welcome*/
+    .welcome {
+        padding: 13.89vw 8.4vw 0 13.89vw;
+    }
+
+    .welcome__title {
+        font-size: var(--main-title-font-md);        
+        line-height: var(--main-title-line-md);
+        padding-right: 5.25rem;
+    }   
+
+    .welcome__dot {
+        color: var(--secondary-bg-color);  
+    }  
+
+    .welcome__content {
+        padding-bottom: 3.5rem;
+        padding-right: 18.67vw;
+    }
+
+    .welcome__content > .mobile-text {
+        display: none;
+    }
+    
+    .welcome__content > .desktop-text{
+        font-size: inherit;
+        display: inline;
+    }
+
+    .welcome__button {
+        width: 14.125rem;
+    }
+
+    /* Second Section - Episodes */
+    .episodes {
+        padding: 11.625rem 6.94vw 14.54rem;
+    }
+
+    .episodes__title {             
+        padding: 0 0 1.625rem 6.94vw;
+    }
+
+    .episodes__players-grid {
+        gap: 5vw;
+    }
+
+    /* Third section - About us */
+    .about-us__img {
+        width: 457.6px;
+        height: 660px;
+        margin: -14.71vw 0 0;
+    }
+
+    .about-us__title {
+        padding: 0 1rem 1.5rem 0;
+    }
+
+    .about-us__info-wrapper {
+        padding: 1.275rem 15.4vw 0 13.89vw;
+        align-self: flex-start;
+        transition: padding .5s ease-in-out;
+    }
+
+    .about-us__content {
+        padding: 0 0 0.5rem;
+    }
+
+    /* Fourth section - Guests */
+    .guests__title {
+        padding: 4rem 0rem 0 13.89vw;
+    }
+
+    .guests__grid {
+        padding-top: 2.25rem; 
+    }
+
+    /* Fifth section - Topics */
+    .topics {
+        padding: 4rem 13.89vw 0;
+    }
+
+    .topics__card-wrapper {
+        padding: 4.312rem 0 0 1rem;
+    }
+
+    .topics__name {
+        padding: 1.81rem 1rem 2.12rem;
+        max-width: 14.75rem;
+    }
+
+    /* Sixth section - News */
+    .news {
+        align-items: center;
+        padding: 13.31rem 0rem 9.44rem;
+    }
+
+    .news__title {
+        text-align: center;
+    }
+    
+    .news__button {
+        width: 21.56rem;
+        margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 2.25rem 6.25rem 1.94rem; 
+    }
+
+    .footer__content {
+        padding-bottom: 0;
+    }
+
+    .footer__icons-wrapper {
+        width: 14.625rem;
+    }
+
+    .footer__icon {
+        width: 1.12rem;
+    }
+
+    /* Masks */
+    .cover-mask {
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }    
+
+      .cover-mask2 {
+        clip-path: polygon(0 20.21%, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+/* || Media Query 3 */
+@media screen and (min-width: 1024px) {
+
+    /* Sections */
+    .welcome__title {
+        font-size: var(--main-title-font-lg);
+        line-height: var(--main-title-line-lg); 
+        padding-bottom: 0;  
+    }
+
+    .welcome__content {
+        padding-right: 34.17vw;
+    }
+
+    .about-us {
+        flex-flow: row nowrap; 
+        padding: 0 17.78vw 0 13.89vw; 
+    }
+
+    .about-us__img {
+        margin: max(-11.71vw, -169px) 0 0;
+    }
+    
+    .about-us__info-wrapper{
+        padding-left: 7.78vw;
+        padding-right: 0;
+    }
+
+    /* Masks */
+    .cover-mask {
+        clip-path: polygon(0 14.4%, 100% 0, 100% 85.6%, 0 100%);
+    }
+    
+    .cover-mask2 {
+        clip-path: polygon(0 29.1%, 100% 0, 100% 100%, 0 100%);
+    }
 }
